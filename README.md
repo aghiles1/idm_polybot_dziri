@@ -11,7 +11,7 @@ Normalement le projet devrais se lancer correctement après le clone du git et l
  *  Ajouter le projet "fr.unice.polytech.deantoni.vrep.polybot" dans le workspace
  *  Créer une application Eclipse comme sur cette image :
  ![application Eclipse](img1.png)
- *  Ajouter la variable d'environnement voir image :
+ *  Ajouter la variable d'environnement (voir image) :
   ![variable d'environnement](img2.png)
    ```
  LD_LIBRARY_PATH = ${workspace_loc:fr.unice.polytech.deantoni.vrep.polybot/vrepLibs/Linux/64Bit}
@@ -67,6 +67,26 @@ TakeDropObject
 ```
 While(15) { // le nombre de boucles 15 (répéter 15 fois)
 			//instructions séparée par des virgules (,)
+}
+```
+
+### Exemple de programme :
+```
+Bot {
+    init Point (12;12)
+    instructionList {
+        While(15) {
+            Right (20;350),
+            Forward (20;5000),
+            IfObjectDetected{
+                TakeDropObject
+            },
+            IfObstacleDetected {
+                Right (20;400)
+            }
+        }
+
+    }
 }
 ```
 ### Critiques :
