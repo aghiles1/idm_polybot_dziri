@@ -23,7 +23,7 @@ Normalement le projet devrait se lancer correctement après le clone du git et l
 ### Le modele Ecore du projet :
 ![diagram](diagram.jpg)
 ### Les instructions disponibles :
-* **Bot** : Le point d'entrer du programme.
+* **Bot** : Le point d'entrée du programme.
 ```
 Bot {
   instructionList {
@@ -31,39 +31,39 @@ Bot {
   }
 }
 ```
-* **Right** : Permet de tourner à droit en donnant en paramètre le vitesse et la durée.
+* **Right** : Permets de tourner à droit en donnant en paramètre la vitesse et la durée.
 ```
   Right (20;350)
 ```
-* **Left** : Permet de tourner à gauche en donnant en paramètre le vitesse et la durée.
+* **Left** : Permets de tourner à gauche en donnant en paramètre la vitesse et la durée.
 ```
   Left (20;350)
 ```
-* **Reverse** : Permet de faire marche arrière en donnant en paramètre le vitesse et la durée.
+* **Reverse** : Permets de faire marche arrière en donnant en paramètre la vitesse et la durée.
 ```
   Reverse (20;350)
 ```
-* **Forward** : Permet d'avancer en ligne droite en donnant en paramètre le vitesse et la durée.
+* **Forward** : Permets d'avancer en ligne droite en donnant en paramètre la vitesse et la durée.
 ```
   Forward (20;350)
 ```
-* **IfObjectDetected** : Permet d’exécuter les instructions si l'objet détecté est une bombe.
+* **IfObjectDetected** : Permets d’exécuter les instructions si l'objet détecté est une bombe.
 ```
 IfObjectDetected{ //si une bombe est détectée faire les instructions sinon rien
 		//instructions séparée par des virgules (,)
 }
 ```
-* **IfObstacleDetected** : Permet d’exécuter les instructions si l'objet détecté est un obstacle (mur).
+* **IfObstacleDetected** : Permets d’exécuter les instructions si l'objet détecté est un obstacle (mur).
 ```
 IfObstacleDetected{ //si un obstacle est détecté faire les instructions sinon rien
 		//instructions séparée par des virgules (,)
 }
 ```
-* **TakeDropObject** : Permet de prendre la bombe.
+* **TakeDropObject** : Permets de prendre la bombe.
 ```
 TakeDropObject
 ```
-* **While** : Permet de faire une boucle sur les instructions.
+* **While** : Permets de faire une boucle sur les instructions.
 ```
 While(15) { // le nombre de boucles 15 (répéter 15 fois)
 			//instructions séparée par des virgules (,)
