@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/aghiles/Documents/gmoc/tuto1/PolyBot/fr.unice.polytech.deantoni.vrep.polybot"/>
 		<item value="/home/aghiles/Documents/gmoc/idm_polybot_dziri"/>
 		<item value="/home/aghiles/Documents/PolyBot"/>
 		<item value="/home/aghiles/Documents/gmoc/tuto1/coppelia"/>
