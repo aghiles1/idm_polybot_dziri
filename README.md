@@ -5,7 +5,7 @@ Ce projet a été fait sous Ubuntu 18.04
 [Gemoc studio](https://ci.inria.fr/gemoc/job/gemoc-studio-eclipsefork/job/concurrency-coordination/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.product/target/products/)
 [V-REP](http://www.coppeliarobotics.com/)
 ### Utilisation du projet :
-Normalement le projet devrais se lancer correctement après le clone du git et l'import du projet sous GeMoc studio.
+Normalement le projet devrait se lancer correctement après le clone du git et l'import du projet sous GeMoc studio.
 * Dans le cas où le projet ne fonctionne pas :
  *  Importer le projet
  *  Ajouter le projet "fr.unice.polytech.deantoni.vrep.polybot" dans le workspace
