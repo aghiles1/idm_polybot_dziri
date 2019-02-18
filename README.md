@@ -1,5 +1,9 @@
 # DZIRI Aghiles SI5-IAM
 Ce projet a été fait sous Ubuntu 18.04
+
+### Requis :
+[Gemoc studio](https://ci.inria.fr/gemoc/job/gemoc-studio-eclipsefork/job/concurrency-coordination/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.product/target/products/)
+[V-REP](http://www.coppeliarobotics.com/)
 ### Utilisation du projet :
 Normalement le projet devrais se lancer correctement après le clone du git et l'import du projet sous GeMoc studio.
 * Dans le cas où le projet ne fonctionne pas :
@@ -13,7 +17,7 @@ Normalement le projet devrais se lancer correctement après le clone du git et l
  LD_LIBRARY_PATH = ${workspace_loc:fr.unice.polytech.deantoni.vrep.polybot/vrepLibs/Linux/64Bit}
  ```
  * Après cela il faut run l'application. Une deuxième fenêtre d'eclipse apparaîtra.
- * Ajouter la scenne à V-vrep
+ * Ajouter la scenne (polyBotVersusPaintBomb.ttt) à V-vrep
  * Lancer le programme de la deuxième fenêtre
 
 ### Le modele Ecore du projet :
