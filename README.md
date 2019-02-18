@@ -31,7 +31,7 @@ Bot {
   }
 }
 ```
-* **Right** : Permets de tourner à droit en donnant en paramètre la vitesse et la durée.
+* **Right** : Permets de tourner à droite en donnant en paramètre la vitesse et la durée.
 ```
   Right (20;350)
 ```
