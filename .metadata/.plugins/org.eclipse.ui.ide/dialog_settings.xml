@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/aghiles/Documents/gmoc/idm_polybot_dziri"/>
 		<item value="/home/aghiles/Documents/PolyBot"/>
 		<item value="/home/aghiles/Documents/gmoc/tuto1/coppelia"/>
 		<item value="/home/aghiles/Documents/gmoc/tuto1/vrepLibs"/>
@@ -107,6 +108,10 @@
 	</list>
 	<section name="ExternalProjectImportWizard">
 	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
 	<section name="NewWizardAction">
 		<item value="fr.inria.diverse.k3.ui.wizards.WizardNewProjectK3Plugin" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
@@ -114,7 +119,7 @@
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
-		<item value="562" key="DIALOG_X_ORIGIN"/>
+		<item value="195" key="DIALOG_X_ORIGIN"/>
 		<item value="311" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="BasicNewProjectResourceWizard">

@@ -191,8 +191,8 @@ class TakeDropObjectAspect extends InstructionAspect {
 		for(var i=0; i < 600 ; i = i + 50) {
 			BotAspect.rob.synchronousTrigger();
 		}
-		BotAspect.rob.goStraight(5);
-		while(BotAspect.rob.getDetectedObjectDistance() > 6 && BotAspect.rob.bombDetected()) {
+		BotAspect.rob.goStraight(10);
+		while(BotAspect.rob.getDetectedObjectDistance() > 10 && BotAspect.rob.bombDetected()) {
 			println(BotAspect.rob.getDetectedObjectDistance());
 			BotAspect.rob.synchronousTrigger();
 		}

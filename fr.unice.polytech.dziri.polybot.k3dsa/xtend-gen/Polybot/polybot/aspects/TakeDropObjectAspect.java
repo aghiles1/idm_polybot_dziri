@@ -43,8 +43,8 @@ public class TakeDropObjectAspect extends InstructionAspect {
     for (int i = 0; (i < 600); i = (i + 50)) {
       BotAspect.rob.synchronousTrigger();
     }
-    BotAspect.rob.goStraight(5);
-    while (((BotAspect.rob.getDetectedObjectDistance() > 6) && BotAspect.rob.bombDetected())) {
+    BotAspect.rob.goStraight(10);
+    while (((BotAspect.rob.getDetectedObjectDistance() > 10) && BotAspect.rob.bombDetected())) {
       {
         InputOutput.<Integer>println(Integer.valueOf(BotAspect.rob.getDetectedObjectDistance()));
         BotAspect.rob.synchronousTrigger();

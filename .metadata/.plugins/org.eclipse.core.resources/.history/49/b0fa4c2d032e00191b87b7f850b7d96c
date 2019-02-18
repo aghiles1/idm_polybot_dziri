@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: fr.unice.polytech.dziri.polybot.dsl
-Bundle-SymbolicName: fr.unice.polytech.dziri.polybot.dsl; singleton:=true
-Bundle-Version: 1.0.0
-Bundle-ClassPath: .
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7

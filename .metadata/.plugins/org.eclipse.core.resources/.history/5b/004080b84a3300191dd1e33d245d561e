@@ -1,3 +1,0 @@
-name = fr.unice.polytech.dziri.polybot.dsl.Polybot
-ecore = platform:/resource/fr.unice.polytech.dziri.polybot/polybot.ecore
-k3 = Polybot.polybot.aspects.BotAspect,Polybot.polybot.aspects.ForwardAspect,Polybot.polybot.aspects.GoToAspect,Polybot.polybot.aspects.InstructionAspect,Polybot.polybot.aspects.LeftAspect,Polybot.polybot.aspects.MoveAspect,Polybot.polybot.aspects.NamedElementAspect,Polybot.polybot.aspects.PointAspect,Polybot.polybot.aspects.ReverseAspect,Polybot.polybot.aspects.RightAspect
