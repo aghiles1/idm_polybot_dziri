@@ -17,7 +17,7 @@ Normalement le projet devrait se lancer correctement après le clone du git et l
  LD_LIBRARY_PATH = ${workspace_loc:fr.unice.polytech.deantoni.vrep.polybot/vrepLibs/Linux/64Bit}
  ```
  * Après cela il faut run l'application. Une deuxième fenêtre d'eclipse apparaîtra.
- * Ajouter la scenne (polyBotVersusPaintBomb.ttt) à V-vrep
+ * Ajouter la scene (polyBotVersusPaintBomb.ttt) à V-vrep
  * Lancer le programme de la deuxième fenêtre
 
 ### Le modele Ecore du projet :
