@@ -6,6 +6,8 @@
 'Bot'=11
 'Forward'=26
 'GoTo'=22
+'IfObjectDetected'=27
+'IfObstacleDetected'=28
 'Left'=24
 'Point'=17
 'Reverse'=25
@@ -37,3 +39,5 @@ T__23=23
 T__24=24
 T__25=25
 T__26=26
+T__27=27
+T__28=28

@@ -1,0 +1,40 @@
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.GoToAspect
+		if (_self instanceof polybot.GoTo){
+			Polybot.polybot.aspects.GoToAspect.exec((polybot.GoTo)_self,speed,duration);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.GoToAspect
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.ForwardAspect
+		if (_self instanceof polybot.Forward){
+			Polybot.polybot.aspects.ForwardAspect.exec((polybot.Forward)_self,speed,duration);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.ForwardAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObjectDetectedAspect
+		if (_self instanceof polybot.IfObjectDetected){
+			Polybot.polybot.aspects.IfObjectDetectedAspect.exec((polybot.IfObjectDetected)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObjectDetectedAspect
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.LeftAspect
+		if (_self instanceof polybot.Left){
+			Polybot.polybot.aspects.LeftAspect.exec((polybot.Left)_self,speed,duration);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.LeftAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
+		if (_self instanceof polybot.Move){
+			Polybot.polybot.aspects.MoveAspect.exec((polybot.Move)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.ReverseAspect
+		if (_self instanceof polybot.Reverse){
+			Polybot.polybot.aspects.ReverseAspect.exec((polybot.Reverse)_self,speed,duration);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.ReverseAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObstacleDetected
+		if (_self instanceof Polybot.polybot.aspects.IfObstacleDetected){
+			Polybot.polybot.aspects.IfObstacleDetected.exec((Polybot.polybot.aspects.IfObstacleDetected)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObstacleDetected
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.RightAspect
+		if (_self instanceof polybot.Right){
+			Polybot.polybot.aspects.RightAspect.exec((polybot.Right)_self,speed,duration);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec(int,int) from Polybot.polybot.aspects.RightAspect

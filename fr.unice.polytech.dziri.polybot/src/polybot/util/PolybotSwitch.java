@@ -131,6 +131,27 @@ public class PolybotSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PolybotPackage.IF_OBJECT_DETECTED: {
+				IfObjectDetected ifObjectDetected = (IfObjectDetected)theEObject;
+				T result = caseIfObjectDetected(ifObjectDetected);
+				if (result == null) result = caseInstruction(ifObjectDetected);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolybotPackage.IF_OBSTACLE_DETECTED: {
+				IfObstacleDetected ifObstacleDetected = (IfObstacleDetected)theEObject;
+				T result = caseIfObstacleDetected(ifObstacleDetected);
+				if (result == null) result = caseInstruction(ifObstacleDetected);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolybotPackage.TAKE_DROP_OBJECT: {
+				TakeDropObject takeDropObject = (TakeDropObject)theEObject;
+				T result = caseTakeDropObject(takeDropObject);
+				if (result == null) result = caseInstruction(takeDropObject);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -267,6 +288,51 @@ public class PolybotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseForward(Forward object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If Object Detected</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If Object Detected</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIfObjectDetected(IfObjectDetected object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If Obstacle Detected</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If Obstacle Detected</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIfObstacleDetected(IfObstacleDetected object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Take Drop Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Take Drop Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTakeDropObject(TakeDropObject object) {
 		return null;
 	}
 

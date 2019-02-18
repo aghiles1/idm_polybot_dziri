@@ -18,6 +18,8 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import polybot.Bot;
 import polybot.Forward;
 import polybot.GoTo;
+import polybot.IfObjectDetected;
+import polybot.IfObstacleDetected;
 import polybot.Left;
 import polybot.Point;
 import polybot.PolybotPackage;
@@ -46,6 +48,12 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case PolybotPackage.GO_TO:
 				sequence_GoTo(context, (GoTo) semanticObject); 
+				return; 
+			case PolybotPackage.IF_OBJECT_DETECTED:
+				sequence_IfObjectDetected(context, (IfObjectDetected) semanticObject); 
+				return; 
+			case PolybotPackage.IF_OBSTACLE_DETECTED:
+				sequence_IfObstacleDetected(context, (IfObstacleDetected) semanticObject); 
 				return; 
 			case PolybotPackage.LEFT:
 				sequence_Left(context, (Left) semanticObject); 
@@ -79,6 +87,7 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Instruction returns Forward
+	 *     Move returns Forward
 	 *     Forward returns Forward
 	 *
 	 * Constraint:
@@ -86,10 +95,10 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_Forward(ISerializationContext context, Forward semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED));
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getForwardAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());
@@ -101,6 +110,7 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Instruction returns GoTo
+	 *     Move returns GoTo
 	 *     GoTo returns GoTo
 	 *
 	 * Constraint:
@@ -108,10 +118,10 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_GoTo(ISerializationContext context, GoTo semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED));
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGoToAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());
@@ -122,7 +132,34 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Instruction returns IfObjectDetected
+	 *     IfObjectDetected returns IfObjectDetected
+	 *
+	 * Constraint:
+	 *     (listOfInstructions+=Instruction listOfInstructions+=Instruction*)
+	 */
+	protected void sequence_IfObjectDetected(ISerializationContext context, IfObjectDetected semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns IfObstacleDetected
+	 *     IfObstacleDetected returns IfObstacleDetected
+	 *
+	 * Constraint:
+	 *     (listOfInstructions+=Instruction listOfInstructions+=Instruction*)
+	 */
+	protected void sequence_IfObstacleDetected(ISerializationContext context, IfObstacleDetected semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Instruction returns Left
+	 *     Move returns Left
 	 *     Left returns Left
 	 *
 	 * Constraint:
@@ -130,10 +167,10 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_Left(ISerializationContext context, Left semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED));
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLeftAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());
@@ -166,6 +203,7 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Instruction returns Reverse
+	 *     Move returns Reverse
 	 *     Reverse returns Reverse
 	 *
 	 * Constraint:
@@ -173,10 +211,10 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_Reverse(ISerializationContext context, Reverse semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED));
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getReverseAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());
@@ -188,6 +226,7 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Instruction returns Right
+	 *     Move returns Right
 	 *     Right returns Right
 	 *
 	 * Constraint:
@@ -195,10 +234,10 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_Right(ISerializationContext context, Right semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__SPEED));
-			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.INSTRUCTION__DURATION));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, PolybotPackage.Literals.MOVE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PolybotPackage.Literals.MOVE__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRightAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());

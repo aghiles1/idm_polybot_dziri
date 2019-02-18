@@ -233,6 +233,75 @@ public class PolybotItemProviderAdapterFactory extends PolybotAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link polybot.IfObjectDetected} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfObjectDetectedItemProvider ifObjectDetectedItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link polybot.IfObjectDetected}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfObjectDetectedAdapter() {
+		if (ifObjectDetectedItemProvider == null) {
+			ifObjectDetectedItemProvider = new IfObjectDetectedItemProvider(this);
+		}
+
+		return ifObjectDetectedItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link polybot.IfObstacleDetected} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfObstacleDetectedItemProvider ifObstacleDetectedItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link polybot.IfObstacleDetected}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfObstacleDetectedAdapter() {
+		if (ifObstacleDetectedItemProvider == null) {
+			ifObstacleDetectedItemProvider = new IfObstacleDetectedItemProvider(this);
+		}
+
+		return ifObstacleDetectedItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link polybot.TakeDropObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TakeDropObjectItemProvider takeDropObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link polybot.TakeDropObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTakeDropObjectAdapter() {
+		if (takeDropObjectItemProvider == null) {
+			takeDropObjectItemProvider = new TakeDropObjectItemProvider(this);
+		}
+
+		return takeDropObjectItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,6 +407,9 @@ public class PolybotItemProviderAdapterFactory extends PolybotAdapterFactory imp
 		if (leftItemProvider != null) leftItemProvider.dispose();
 		if (reverseItemProvider != null) reverseItemProvider.dispose();
 		if (forwardItemProvider != null) forwardItemProvider.dispose();
+		if (ifObjectDetectedItemProvider != null) ifObjectDetectedItemProvider.dispose();
+		if (ifObstacleDetectedItemProvider != null) ifObstacleDetectedItemProvider.dispose();
+		if (takeDropObjectItemProvider != null) takeDropObjectItemProvider.dispose();
 	}
 
 }

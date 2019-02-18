@@ -198,7 +198,52 @@ ruleInstruction returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getGoToParserRuleCall_0());
+			newCompositeNode(grammarAccess.getInstructionAccess().getMoveParserRuleCall_0());
+		}
+		this_Move_0=ruleMove
+		{
+			$current = $this_Move_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getIfObstacleDetectedParserRuleCall_1());
+		}
+		this_IfObstacleDetected_1=ruleIfObstacleDetected
+		{
+			$current = $this_IfObstacleDetected_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getInstructionAccess().getIfObjectDetectedParserRuleCall_2());
+		}
+		this_IfObjectDetected_2=ruleIfObjectDetected
+		{
+			$current = $this_IfObjectDetected_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleMove
+entryRuleMove returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMoveRule()); }
+	iv_ruleMove=ruleMove
+	{ $current=$iv_ruleMove.current; }
+	EOF;
+
+// Rule Move
+ruleMove returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getMoveAccess().getGoToParserRuleCall_0());
 		}
 		this_GoTo_0=ruleGoTo
 		{
@@ -207,7 +252,7 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getRightParserRuleCall_1());
+			newCompositeNode(grammarAccess.getMoveAccess().getRightParserRuleCall_1());
 		}
 		this_Right_1=ruleRight
 		{
@@ -216,7 +261,7 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getLeftParserRuleCall_2());
+			newCompositeNode(grammarAccess.getMoveAccess().getLeftParserRuleCall_2());
 		}
 		this_Left_2=ruleLeft
 		{
@@ -225,7 +270,7 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getReverseParserRuleCall_3());
+			newCompositeNode(grammarAccess.getMoveAccess().getReverseParserRuleCall_3());
 		}
 		this_Reverse_3=ruleReverse
 		{
@@ -234,7 +279,7 @@ ruleInstruction returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getForwardParserRuleCall_4());
+			newCompositeNode(grammarAccess.getMoveAccess().getForwardParserRuleCall_4());
 		}
 		this_Forward_4=ruleForward
 		{
@@ -753,6 +798,174 @@ ruleForward returns [EObject current=null]
 		otherlv_6=')'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getForwardAccess().getRightParenthesisKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleIfObjectDetected
+entryRuleIfObjectDetected returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIfObjectDetectedRule()); }
+	iv_ruleIfObjectDetected=ruleIfObjectDetected
+	{ $current=$iv_ruleIfObjectDetected.current; }
+	EOF;
+
+// Rule IfObjectDetected
+ruleIfObjectDetected returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIfObjectDetectedAccess().getIfObjectDetectedAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='IfObjectDetected'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIfObjectDetectedAccess().getIfObjectDetectedKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getIfObjectDetectedAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIfObjectDetectedAccess().getListOfInstructionsInstructionParserRuleCall_3_0_0());
+					}
+					lv_listOfInstructions_3_0=ruleInstruction
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIfObjectDetectedRule());
+						}
+						add(
+							$current,
+							"listOfInstructions",
+							lv_listOfInstructions_3_0,
+							"fr.unice.polytech.dziri.polybot.Polybot.Instruction");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_4=','
+				{
+					newLeafNode(otherlv_4, grammarAccess.getIfObjectDetectedAccess().getCommaKeyword_3_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getIfObjectDetectedAccess().getListOfInstructionsInstructionParserRuleCall_3_1_1_0());
+						}
+						lv_listOfInstructions_5_0=ruleInstruction
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getIfObjectDetectedRule());
+							}
+							add(
+								$current,
+								"listOfInstructions",
+								lv_listOfInstructions_5_0,
+								"fr.unice.polytech.dziri.polybot.Polybot.Instruction");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getIfObjectDetectedAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleIfObstacleDetected
+entryRuleIfObstacleDetected returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIfObstacleDetectedRule()); }
+	iv_ruleIfObstacleDetected=ruleIfObstacleDetected
+	{ $current=$iv_ruleIfObstacleDetected.current; }
+	EOF;
+
+// Rule IfObstacleDetected
+ruleIfObstacleDetected returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIfObstacleDetectedAccess().getIfObstacleDetectedAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='IfObstacleDetected'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIfObstacleDetectedAccess().getIfObstacleDetectedKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getIfObstacleDetectedAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsInstructionParserRuleCall_3_0_0());
+					}
+					lv_listOfInstructions_3_0=ruleInstruction
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIfObstacleDetectedRule());
+						}
+						add(
+							$current,
+							"listOfInstructions",
+							lv_listOfInstructions_3_0,
+							"fr.unice.polytech.dziri.polybot.Polybot.Instruction");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_4=','
+				{
+					newLeafNode(otherlv_4, grammarAccess.getIfObstacleDetectedAccess().getCommaKeyword_3_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsInstructionParserRuleCall_3_1_1_0());
+						}
+						lv_listOfInstructions_5_0=ruleInstruction
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getIfObstacleDetectedRule());
+							}
+							add(
+								$current,
+								"listOfInstructions",
+								lv_listOfInstructions_5_0,
+								"fr.unice.polytech.dziri.polybot.Polybot.Instruction");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getIfObstacleDetectedAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

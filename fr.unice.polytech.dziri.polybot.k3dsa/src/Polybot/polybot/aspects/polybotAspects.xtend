@@ -20,6 +20,9 @@ import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.unice.polytech.deantoni.vrep.polybot.robot.PolyRob
 import fr.unice.polytech.deantoni.vrep.polybot.PolyBrain
+import polybot.IfObjectDetected
+import polybot.TakeDropObject
+import polybot.IfObstacleDetected
 
 @Aspect(className=Bot)
 class BotAspect {
@@ -32,7 +35,7 @@ class BotAspect {
 		BotAspect.rob.start();
 		BotAspect.rob.synchronous();
         for(instr : _self.instructionList){
-            instr.launch();
+            instr.exec();
         }
     }
 }
@@ -45,12 +48,9 @@ class PointAspect {
 @Aspect(className=Instruction)
 abstract class InstructionAspect extends NamedElementAspect {
 	
-	def void launch() {
-		_self.exec(_self.speed, _self.duration);
-	}
 	@Step
 	@ReplaceAspectMethod
-	def void exec(int speed, int duration);
+	def void exec();
 }
 
 @Aspect(className=NamedElement)
@@ -63,6 +63,11 @@ abstract class NamedElementAspect {
 @Aspect(className=Move)
 abstract class MoveAspect extends InstructionAspect {
 	@Step
+	@OverrideAspectMethod
+	def void exec() {
+		_self.exec(_self.speed, _self.duration);
+	} 
+	@Step
 	@ReplaceAspectMethod
 	def void exec(int speed, int duration);
 }
@@ -72,7 +77,6 @@ class GoToAspect extends MoveAspect {
 	@Step
 	@OverrideAspectMethod
 	def void exec(int speed, int duration) {
-				
 		BotAspect.rob.goToSafePlace(BotAspect.rob.position, BotAspect.rob.orientation);
 	}
 }
@@ -133,5 +137,37 @@ class ForwardAspect extends MoveAspect {
 		BotAspect.rob.goStraight(0);
 	}
 }
-
+/**
+ * SI on trouve l'objet on va vers lui
+ */
+@Aspect(className=IfObjectDetected)
+class IfObjectDetectedAspect extends InstructionAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec() {
+			println("IfObjectDetected");		
+	}
+}
+/**
+ * Si on detect un obstacle
+ */
+@Aspect(className=IfObstacleDetected)
+class IfObstacleDetectedAspect extends InstructionAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec() {
+		println("IfObstacleDetected");		
+	}
+}
+/** 
+ * Prendre l'objet et le déposer dans la bonne place
+ */
+@Aspect(className=TakeDropObject)
+class TakeDropObjectAspect extends InstructionAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec() {
+		println("TakeDropObject");		
+	}
+}
 

@@ -32,6 +32,7 @@ public class PolybotParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, PolybotGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
+			builder.put(grammarAccess.getMoveAccess().getAlternatives(), "rule__Move__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getBotAccess().getGroup(), "rule__Bot__Group__0");
 			builder.put(grammarAccess.getBotAccess().getGroup_3(), "rule__Bot__Group_3__0");
@@ -44,6 +45,12 @@ public class PolybotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLeftAccess().getGroup(), "rule__Left__Group__0");
 			builder.put(grammarAccess.getReverseAccess().getGroup(), "rule__Reverse__Group__0");
 			builder.put(grammarAccess.getForwardAccess().getGroup(), "rule__Forward__Group__0");
+			builder.put(grammarAccess.getIfObjectDetectedAccess().getGroup(), "rule__IfObjectDetected__Group__0");
+			builder.put(grammarAccess.getIfObjectDetectedAccess().getGroup_3(), "rule__IfObjectDetected__Group_3__0");
+			builder.put(grammarAccess.getIfObjectDetectedAccess().getGroup_3_1(), "rule__IfObjectDetected__Group_3_1__0");
+			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup(), "rule__IfObstacleDetected__Group__0");
+			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup_3(), "rule__IfObstacleDetected__Group_3__0");
+			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup_3_1(), "rule__IfObstacleDetected__Group_3_1__0");
 			builder.put(grammarAccess.getBotAccess().getInitialPositionAssignment_3_1(), "rule__Bot__InitialPositionAssignment_3_1");
 			builder.put(grammarAccess.getBotAccess().getInstructionListAssignment_4_2(), "rule__Bot__InstructionListAssignment_4_2");
 			builder.put(grammarAccess.getBotAccess().getInstructionListAssignment_4_3_1(), "rule__Bot__InstructionListAssignment_4_3_1");
@@ -59,6 +66,10 @@ public class PolybotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getReverseAccess().getDurationAssignment_5(), "rule__Reverse__DurationAssignment_5");
 			builder.put(grammarAccess.getForwardAccess().getSpeedAssignment_3(), "rule__Forward__SpeedAssignment_3");
 			builder.put(grammarAccess.getForwardAccess().getDurationAssignment_5(), "rule__Forward__DurationAssignment_5");
+			builder.put(grammarAccess.getIfObjectDetectedAccess().getListOfInstructionsAssignment_3_0(), "rule__IfObjectDetected__ListOfInstructionsAssignment_3_0");
+			builder.put(grammarAccess.getIfObjectDetectedAccess().getListOfInstructionsAssignment_3_1_1(), "rule__IfObjectDetected__ListOfInstructionsAssignment_3_1_1");
+			builder.put(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsAssignment_3_0(), "rule__IfObstacleDetected__ListOfInstructionsAssignment_3_0");
+			builder.put(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsAssignment_3_1_1(), "rule__IfObstacleDetected__ListOfInstructionsAssignment_3_1_1");
 		}
 	}
 	

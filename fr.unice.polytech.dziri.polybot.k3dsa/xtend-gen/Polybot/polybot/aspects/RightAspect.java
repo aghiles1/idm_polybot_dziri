@@ -34,6 +34,11 @@ public class RightAspect extends MoveAspect {
     };
   }
   
+  private static void super_exec(final Right _self, final int speed, final int duration) {
+    final Polybot.polybot.aspects.MoveAspectMoveAspectProperties _self_ = Polybot.polybot.aspects.MoveAspectMoveAspectContext.getSelf(_self);
+     Polybot.polybot.aspects.MoveAspect._privk3_exec(_self_, _self,speed,duration);
+  }
+  
   protected static void _privk3_exec(final RightAspectRightAspectProperties _self_, final Right _self, final int speed, final int duration) {
     InputOutput.<String>println("Right");
     BotAspect.rob.turnRight(speed);

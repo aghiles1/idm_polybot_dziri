@@ -1,0 +1,40 @@
+package Polybot.polybot.aspects;
+
+import Polybot.polybot.aspects.InstructionAspectInstructionAspectProperties;
+import Polybot.polybot.aspects.NamedElementAspect;
+import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod;
+import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import polybot.Instruction;
+
+@Aspect(className = Instruction.class)
+@SuppressWarnings("all")
+public abstract class InstructionAspect extends NamedElementAspect {
+  @Step
+  @ReplaceAspectMethod
+  @Abstract
+  public static void launch(final Instruction _self) {
+    final Polybot.polybot.aspects.InstructionAspectInstructionAspectProperties _self_ = Polybot.polybot.aspects.InstructionAspectInstructionAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void launch()
+    if (_self instanceof polybot.Instruction){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			Polybot.polybot.aspects.InstructionAspect._privk3_launch(_self_, (polybot.Instruction)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {_self}, command, "Instruction", "launch");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+  
+  protected static void _privk3_launch(final InstructionAspectInstructionAspectProperties _self_, final Instruction _self) {
+    throw new java.lang.RuntimeException("Not implemented");
+  }
+}

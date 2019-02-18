@@ -1,0 +1,47 @@
+#
+
+pluginName = fr.unice.polytech.dziri.polybot Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_Bot_type = Bot
+_UI_Point_type = Point
+_UI_Instruction_type = Instruction
+_UI_NamedElement_type = Named Element
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_Bot_initialPosition_feature = Initial Position
+_UI_Bot_instructionList_feature = Instruction List
+_UI_Point_x_feature = X
+_UI_Point_y_feature = Y
+_UI_NamedElement_name_feature = Name
+_UI_Unknown_feature = Unspecified
+
+_UI_Start_type = Start
+_UI_GoTo_type = Go To
+_UI_Move_type = Move
+_UI_Right_type = Right
+_UI_Left_type = Left
+_UI_Stop_type = Stop
+_UI_Reverse_type = Reverse
+_UI_Forward_type = Forward
+_UI_Instruction_speed_feature = Speed
+_UI_Instruction_duration_feature = Duration
+_UI_IfObjectDetected_type = If Object Detected
+_UI_IfObstacleDetected_type = If Obstacle Detected
+_UI_GoTo_speed_feature = Speed
+_UI_GoTo_duration_feature = Duration
+_UI_IfObjectDetected_listOfInstructions_feature = List Of Instructions
+_UI_IfObstacleDetected_listOfInstructions_feature = List Of Instructions
+_UI_Move_speed_feature = Speed
+_UI_Move_duration_feature = Duration

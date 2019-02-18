@@ -4,6 +4,7 @@ import Polybot.polybot.aspects.InstructionAspect;
 import Polybot.polybot.aspects.MoveAspectMoveAspectProperties;
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import polybot.Move;
@@ -11,6 +12,28 @@ import polybot.Move;
 @Aspect(className = Move.class)
 @SuppressWarnings("all")
 public abstract class MoveAspect extends InstructionAspect {
+  @Step
+  @OverrideAspectMethod
+  public static void exec(final Move _self) {
+    final Polybot.polybot.aspects.MoveAspectMoveAspectProperties _self_ = Polybot.polybot.aspects.MoveAspectMoveAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void exec()
+    if (_self instanceof polybot.Move){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			Polybot.polybot.aspects.MoveAspect._privk3_exec(_self_, (polybot.Move)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {_self}, command, "Move", "exec");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+  
   @Step
   @ReplaceAspectMethod
   @Abstract
@@ -57,6 +80,10 @@ public abstract class MoveAspect extends InstructionAspect {
     	}
     	;
     };
+  }
+  
+  protected static void _privk3_exec(final MoveAspectMoveAspectProperties _self_, final Move _self) {
+    MoveAspect.exec(_self, _self.getSpeed(), _self.getDuration());
   }
   
   protected static void _privk3_exec(final MoveAspectMoveAspectProperties _self_, final Move _self, final int speed, final int duration) {

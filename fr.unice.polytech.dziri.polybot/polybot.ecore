@@ -11,14 +11,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GoTo" eSuperTypes="#//Move"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Move" abstract="true" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GoTo" eSuperTypes="#//Move"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Move" abstract="true" eSuperTypes="#//Instruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Right" eSuperTypes="#//Move"/>
   <eClassifiers xsi:type="ecore:EClass" name="Left" eSuperTypes="#//Move"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reverse" eSuperTypes="#//Move"/>
   <eClassifiers xsi:type="ecore:EClass" name="Forward" eSuperTypes="#//Move"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IfObjectDetected" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listOfInstructions" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IfObstacleDetected" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listOfInstructions" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TakeDropObject" eSuperTypes="#//Instruction"/>
 </ecore:EPackage>

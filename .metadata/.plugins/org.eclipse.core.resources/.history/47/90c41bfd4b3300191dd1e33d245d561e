@@ -1,0 +1,840 @@
+/**
+ */
+package polybot;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see polybot.PolybotFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface PolybotPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "polybot";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://fr/unice/polytech/dziri/polybot";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "fr.unice.polytech.dziri.polybot";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	PolybotPackage eINSTANCE = polybot.impl.PolybotPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.BotImpl <em>Bot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.BotImpl
+	 * @see polybot.impl.PolybotPackageImpl#getBot()
+	 * @generated
+	 */
+	int BOT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Initial Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOT__INITIAL_POSITION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Instruction List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOT__INSTRUCTION_LIST = 1;
+
+	/**
+	 * The number of structural features of the '<em>Bot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Bot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.PointImpl <em>Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.PointImpl
+	 * @see polybot.impl.PolybotPackageImpl#getPoint()
+	 * @generated
+	 */
+	int POINT = 1;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT__X = 0;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT__Y = 1;
+
+	/**
+	 * The number of structural features of the '<em>Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.InstructionImpl <em>Instruction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.InstructionImpl
+	 * @see polybot.impl.PolybotPackageImpl#getInstruction()
+	 * @generated
+	 */
+	int INSTRUCTION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.MoveImpl <em>Move</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.MoveImpl
+	 * @see polybot.impl.PolybotPackageImpl#getMove()
+	 * @generated
+	 */
+	int MOVE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Move</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Move</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.GoToImpl <em>Go To</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.GoToImpl
+	 * @see polybot.impl.PolybotPackageImpl#getGoTo()
+	 * @generated
+	 */
+	int GO_TO = 3;
+
+	/**
+	 * The feature id for the '<em><b>Speed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GO_TO__SPEED = MOVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GO_TO__DURATION = MOVE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Go To</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GO_TO_FEATURE_COUNT = MOVE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Go To</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GO_TO_OPERATION_COUNT = MOVE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.RightImpl <em>Right</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.RightImpl
+	 * @see polybot.impl.PolybotPackageImpl#getRight()
+	 * @generated
+	 */
+	int RIGHT = 5;
+
+	/**
+	 * The number of structural features of the '<em>Right</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Right</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_OPERATION_COUNT = MOVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.LeftImpl <em>Left</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.LeftImpl
+	 * @see polybot.impl.PolybotPackageImpl#getLeft()
+	 * @generated
+	 */
+	int LEFT = 6;
+
+	/**
+	 * The number of structural features of the '<em>Left</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEFT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Left</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEFT_OPERATION_COUNT = MOVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.ReverseImpl <em>Reverse</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.ReverseImpl
+	 * @see polybot.impl.PolybotPackageImpl#getReverse()
+	 * @generated
+	 */
+	int REVERSE = 7;
+
+	/**
+	 * The number of structural features of the '<em>Reverse</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVERSE_FEATURE_COUNT = MOVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Reverse</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVERSE_OPERATION_COUNT = MOVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.ForwardImpl <em>Forward</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.ForwardImpl
+	 * @see polybot.impl.PolybotPackageImpl#getForward()
+	 * @generated
+	 */
+	int FORWARD = 8;
+
+	/**
+	 * The number of structural features of the '<em>Forward</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_FEATURE_COUNT = MOVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Forward</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_OPERATION_COUNT = MOVE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.IfObjectDetectedImpl <em>If Object Detected</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.IfObjectDetectedImpl
+	 * @see polybot.impl.PolybotPackageImpl#getIfObjectDetected()
+	 * @generated
+	 */
+	int IF_OBJECT_DETECTED = 9;
+
+	/**
+	 * The feature id for the '<em><b>List Of Instructions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED__LIST_OF_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>If Object Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>If Object Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.IfObstacleDetectedImpl <em>If Obstacle Detected</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.IfObstacleDetectedImpl
+	 * @see polybot.impl.PolybotPackageImpl#getIfObstacleDetected()
+	 * @generated
+	 */
+	int IF_OBSTACLE_DETECTED = 10;
+
+	/**
+	 * The feature id for the '<em><b>List Of Instructions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>If Obstacle Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>If Obstacle Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Bot <em>Bot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bot</em>'.
+	 * @see polybot.Bot
+	 * @generated
+	 */
+	EClass getBot();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link polybot.Bot#getInitialPosition <em>Initial Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Initial Position</em>'.
+	 * @see polybot.Bot#getInitialPosition()
+	 * @see #getBot()
+	 * @generated
+	 */
+	EReference getBot_InitialPosition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link polybot.Bot#getInstructionList <em>Instruction List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Instruction List</em>'.
+	 * @see polybot.Bot#getInstructionList()
+	 * @see #getBot()
+	 * @generated
+	 */
+	EReference getBot_InstructionList();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Point <em>Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Point</em>'.
+	 * @see polybot.Point
+	 * @generated
+	 */
+	EClass getPoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.Point#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see polybot.Point#getX()
+	 * @see #getPoint()
+	 * @generated
+	 */
+	EAttribute getPoint_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.Point#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see polybot.Point#getY()
+	 * @see #getPoint()
+	 * @generated
+	 */
+	EAttribute getPoint_Y();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Instruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction</em>'.
+	 * @see polybot.Instruction
+	 * @generated
+	 */
+	EClass getInstruction();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.GoTo <em>Go To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Go To</em>'.
+	 * @see polybot.GoTo
+	 * @generated
+	 */
+	EClass getGoTo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.GoTo#getSpeed <em>Speed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Speed</em>'.
+	 * @see polybot.GoTo#getSpeed()
+	 * @see #getGoTo()
+	 * @generated
+	 */
+	EAttribute getGoTo_Speed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.GoTo#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see polybot.GoTo#getDuration()
+	 * @see #getGoTo()
+	 * @generated
+	 */
+	EAttribute getGoTo_Duration();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Move <em>Move</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Move</em>'.
+	 * @see polybot.Move
+	 * @generated
+	 */
+	EClass getMove();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Right <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Right</em>'.
+	 * @see polybot.Right
+	 * @generated
+	 */
+	EClass getRight();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Left <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Left</em>'.
+	 * @see polybot.Left
+	 * @generated
+	 */
+	EClass getLeft();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Reverse <em>Reverse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reverse</em>'.
+	 * @see polybot.Reverse
+	 * @generated
+	 */
+	EClass getReverse();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.Forward <em>Forward</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Forward</em>'.
+	 * @see polybot.Forward
+	 * @generated
+	 */
+	EClass getForward();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.IfObjectDetected <em>If Object Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Object Detected</em>'.
+	 * @see polybot.IfObjectDetected
+	 * @generated
+	 */
+	EClass getIfObjectDetected();
+
+	/**
+	 * Returns the meta object for the reference list '{@link polybot.IfObjectDetected#getListOfInstructions <em>List Of Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>List Of Instructions</em>'.
+	 * @see polybot.IfObjectDetected#getListOfInstructions()
+	 * @see #getIfObjectDetected()
+	 * @generated
+	 */
+	EReference getIfObjectDetected_ListOfInstructions();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.IfObstacleDetected <em>If Obstacle Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Obstacle Detected</em>'.
+	 * @see polybot.IfObstacleDetected
+	 * @generated
+	 */
+	EClass getIfObstacleDetected();
+
+	/**
+	 * Returns the meta object for the reference list '{@link polybot.IfObstacleDetected#getListOfInstructions <em>List Of Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>List Of Instructions</em>'.
+	 * @see polybot.IfObstacleDetected#getListOfInstructions()
+	 * @see #getIfObstacleDetected()
+	 * @generated
+	 */
+	EReference getIfObstacleDetected_ListOfInstructions();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	PolybotFactory getPolybotFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link polybot.impl.BotImpl <em>Bot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.BotImpl
+		 * @see polybot.impl.PolybotPackageImpl#getBot()
+		 * @generated
+		 */
+		EClass BOT = eINSTANCE.getBot();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Position</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOT__INITIAL_POSITION = eINSTANCE.getBot_InitialPosition();
+
+		/**
+		 * The meta object literal for the '<em><b>Instruction List</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOT__INSTRUCTION_LIST = eINSTANCE.getBot_InstructionList();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.PointImpl <em>Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.PointImpl
+		 * @see polybot.impl.PolybotPackageImpl#getPoint()
+		 * @generated
+		 */
+		EClass POINT = eINSTANCE.getPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POINT__X = eINSTANCE.getPoint_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POINT__Y = eINSTANCE.getPoint_Y();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.InstructionImpl <em>Instruction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.InstructionImpl
+		 * @see polybot.impl.PolybotPackageImpl#getInstruction()
+		 * @generated
+		 */
+		EClass INSTRUCTION = eINSTANCE.getInstruction();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.GoToImpl <em>Go To</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.GoToImpl
+		 * @see polybot.impl.PolybotPackageImpl#getGoTo()
+		 * @generated
+		 */
+		EClass GO_TO = eINSTANCE.getGoTo();
+
+		/**
+		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GO_TO__SPEED = eINSTANCE.getGoTo_Speed();
+
+		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GO_TO__DURATION = eINSTANCE.getGoTo_Duration();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.MoveImpl <em>Move</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.MoveImpl
+		 * @see polybot.impl.PolybotPackageImpl#getMove()
+		 * @generated
+		 */
+		EClass MOVE = eINSTANCE.getMove();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.RightImpl <em>Right</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.RightImpl
+		 * @see polybot.impl.PolybotPackageImpl#getRight()
+		 * @generated
+		 */
+		EClass RIGHT = eINSTANCE.getRight();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.LeftImpl <em>Left</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.LeftImpl
+		 * @see polybot.impl.PolybotPackageImpl#getLeft()
+		 * @generated
+		 */
+		EClass LEFT = eINSTANCE.getLeft();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.ReverseImpl <em>Reverse</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.ReverseImpl
+		 * @see polybot.impl.PolybotPackageImpl#getReverse()
+		 * @generated
+		 */
+		EClass REVERSE = eINSTANCE.getReverse();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.ForwardImpl <em>Forward</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.ForwardImpl
+		 * @see polybot.impl.PolybotPackageImpl#getForward()
+		 * @generated
+		 */
+		EClass FORWARD = eINSTANCE.getForward();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.IfObjectDetectedImpl <em>If Object Detected</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.IfObjectDetectedImpl
+		 * @see polybot.impl.PolybotPackageImpl#getIfObjectDetected()
+		 * @generated
+		 */
+		EClass IF_OBJECT_DETECTED = eINSTANCE.getIfObjectDetected();
+
+		/**
+		 * The meta object literal for the '<em><b>List Of Instructions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_OBJECT_DETECTED__LIST_OF_INSTRUCTIONS = eINSTANCE.getIfObjectDetected_ListOfInstructions();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.IfObstacleDetectedImpl <em>If Obstacle Detected</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.IfObstacleDetectedImpl
+		 * @see polybot.impl.PolybotPackageImpl#getIfObstacleDetected()
+		 * @generated
+		 */
+		EClass IF_OBSTACLE_DETECTED = eINSTANCE.getIfObstacleDetected();
+
+		/**
+		 * The meta object literal for the '<em><b>List Of Instructions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS = eINSTANCE.getIfObstacleDetected_ListOfInstructions();
+
+	}
+
+} //PolybotPackage

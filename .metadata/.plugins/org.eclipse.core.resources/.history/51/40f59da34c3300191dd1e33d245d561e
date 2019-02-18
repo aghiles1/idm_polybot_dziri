@@ -1,0 +1,132 @@
+/**
+ */
+package polybot.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import polybot.IfObstacleDetected;
+import polybot.Instruction;
+import polybot.PolybotPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>If Obstacle Detected</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link polybot.impl.IfObstacleDetectedImpl#getListOfInstructions <em>List Of Instructions</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class IfObstacleDetectedImpl extends InstructionImpl implements IfObstacleDetected {
+	/**
+	 * The cached value of the '{@link #getListOfInstructions() <em>List Of Instructions</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListOfInstructions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Instruction> listOfInstructions;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfObstacleDetectedImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PolybotPackage.Literals.IF_OBSTACLE_DETECTED;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Instruction> getListOfInstructions() {
+		if (listOfInstructions == null) {
+			listOfInstructions = new EObjectResolvingEList<Instruction>(Instruction.class, this, PolybotPackage.IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS);
+		}
+		return listOfInstructions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case PolybotPackage.IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS:
+				return getListOfInstructions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case PolybotPackage.IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS:
+				getListOfInstructions().clear();
+				getListOfInstructions().addAll((Collection<? extends Instruction>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case PolybotPackage.IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS:
+				getListOfInstructions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case PolybotPackage.IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS:
+				return listOfInstructions != null && !listOfInstructions.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //IfObstacleDetectedImpl

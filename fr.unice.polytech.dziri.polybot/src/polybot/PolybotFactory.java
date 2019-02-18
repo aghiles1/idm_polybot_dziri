@@ -85,6 +85,33 @@ public interface PolybotFactory extends EFactory {
 	Forward createForward();
 
 	/**
+	 * Returns a new object of class '<em>If Object Detected</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>If Object Detected</em>'.
+	 * @generated
+	 */
+	IfObjectDetected createIfObjectDetected();
+
+	/**
+	 * Returns a new object of class '<em>If Obstacle Detected</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>If Obstacle Detected</em>'.
+	 * @generated
+	 */
+	IfObstacleDetected createIfObstacleDetected();
+
+	/**
+	 * Returns a new object of class '<em>Take Drop Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Take Drop Object</em>'.
+	 * @generated
+	 */
+	TakeDropObject createTakeDropObject();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

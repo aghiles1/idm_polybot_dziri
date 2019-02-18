@@ -104,6 +104,18 @@ public class PolybotAdapterFactory extends AdapterFactoryImpl {
 				return createForwardAdapter();
 			}
 			@Override
+			public Adapter caseIfObjectDetected(IfObjectDetected object) {
+				return createIfObjectDetectedAdapter();
+			}
+			@Override
+			public Adapter caseIfObstacleDetected(IfObstacleDetected object) {
+				return createIfObstacleDetectedAdapter();
+			}
+			@Override
+			public Adapter caseTakeDropObject(TakeDropObject object) {
+				return createTakeDropObjectAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +258,48 @@ public class PolybotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createForwardAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link polybot.IfObjectDetected <em>If Object Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see polybot.IfObjectDetected
+	 * @generated
+	 */
+	public Adapter createIfObjectDetectedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link polybot.IfObstacleDetected <em>If Obstacle Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see polybot.IfObstacleDetected
+	 * @generated
+	 */
+	public Adapter createIfObstacleDetectedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link polybot.TakeDropObject <em>Take Drop Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see polybot.TakeDropObject
+	 * @generated
+	 */
+	public Adapter createTakeDropObjectAdapter() {
 		return null;
 	}
 

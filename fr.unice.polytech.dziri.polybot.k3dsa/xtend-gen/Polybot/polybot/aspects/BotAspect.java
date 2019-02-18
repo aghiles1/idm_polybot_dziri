@@ -30,7 +30,7 @@ public class BotAspect {
     BotAspect.rob.synchronous();
     EList<Instruction> _instructionList = _self.getInstructionList();
     for (final Instruction instr : _instructionList) {
-      InstructionAspect.launch(instr);
+      InstructionAspect.exec(instr);
     }
   }
 }

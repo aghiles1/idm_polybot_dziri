@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import polybot.Bot;
 import polybot.Forward;
 import polybot.GoTo;
+import polybot.IfObjectDetected;
+import polybot.IfObstacleDetected;
 import polybot.Instruction;
 import polybot.Left;
 import polybot.Move;
@@ -20,6 +22,7 @@ import polybot.PolybotFactory;
 import polybot.PolybotPackage;
 import polybot.Reverse;
 import polybot.Right;
+import polybot.TakeDropObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +93,27 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 * @generated
 	 */
 	private EClass forwardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifObjectDetectedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifObstacleDetectedEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass takeDropObjectEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -220,24 +244,6 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstruction_Speed() {
-		return (EAttribute)instructionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getInstruction_Duration() {
-		return (EAttribute)instructionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGoTo() {
 		return goToEClass;
 	}
@@ -249,6 +255,24 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 */
 	public EClass getMove() {
 		return moveEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMove_Speed() {
+		return (EAttribute)moveEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMove_Duration() {
+		return (EAttribute)moveEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -292,6 +316,51 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIfObjectDetected() {
+		return ifObjectDetectedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfObjectDetected_ListOfInstructions() {
+		return (EReference)ifObjectDetectedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIfObstacleDetected() {
+		return ifObstacleDetectedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfObstacleDetected_ListOfInstructions() {
+		return (EReference)ifObstacleDetectedEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTakeDropObject() {
+		return takeDropObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PolybotFactory getPolybotFactory() {
 		return (PolybotFactory)getEFactoryInstance();
 	}
@@ -324,12 +393,12 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		createEAttribute(pointEClass, POINT__Y);
 
 		instructionEClass = createEClass(INSTRUCTION);
-		createEAttribute(instructionEClass, INSTRUCTION__SPEED);
-		createEAttribute(instructionEClass, INSTRUCTION__DURATION);
 
 		goToEClass = createEClass(GO_TO);
 
 		moveEClass = createEClass(MOVE);
+		createEAttribute(moveEClass, MOVE__SPEED);
+		createEAttribute(moveEClass, MOVE__DURATION);
 
 		rightEClass = createEClass(RIGHT);
 
@@ -338,6 +407,14 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		reverseEClass = createEClass(REVERSE);
 
 		forwardEClass = createEClass(FORWARD);
+
+		ifObjectDetectedEClass = createEClass(IF_OBJECT_DETECTED);
+		createEReference(ifObjectDetectedEClass, IF_OBJECT_DETECTED__LIST_OF_INSTRUCTIONS);
+
+		ifObstacleDetectedEClass = createEClass(IF_OBSTACLE_DETECTED);
+		createEReference(ifObstacleDetectedEClass, IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS);
+
+		takeDropObjectEClass = createEClass(TAKE_DROP_OBJECT);
 	}
 
 	/**
@@ -374,6 +451,9 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		leftEClass.getESuperTypes().add(this.getMove());
 		reverseEClass.getESuperTypes().add(this.getMove());
 		forwardEClass.getESuperTypes().add(this.getMove());
+		ifObjectDetectedEClass.getESuperTypes().add(this.getInstruction());
+		ifObstacleDetectedEClass.getESuperTypes().add(this.getInstruction());
+		takeDropObjectEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(botEClass, Bot.class, "Bot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -385,12 +465,12 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		initEAttribute(getPoint_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstruction_Speed(), ecorePackage.getEInt(), "speed", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstruction_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goToEClass, GoTo.class, "GoTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(moveEClass, Move.class, "Move", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMove_Speed(), ecorePackage.getEInt(), "speed", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMove_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rightEClass, Right.class, "Right", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -399,6 +479,14 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		initEClass(reverseEClass, Reverse.class, "Reverse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(forwardEClass, Forward.class, "Forward", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ifObjectDetectedEClass, IfObjectDetected.class, "IfObjectDetected", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIfObjectDetected_ListOfInstructions(), this.getInstruction(), null, "listOfInstructions", null, 0, -1, IfObjectDetected.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ifObstacleDetectedEClass, IfObstacleDetected.class, "IfObstacleDetected", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIfObstacleDetected_ListOfInstructions(), this.getInstruction(), null, "listOfInstructions", null, 0, -1, IfObstacleDetected.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(takeDropObjectEClass, TakeDropObject.class, "TakeDropObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

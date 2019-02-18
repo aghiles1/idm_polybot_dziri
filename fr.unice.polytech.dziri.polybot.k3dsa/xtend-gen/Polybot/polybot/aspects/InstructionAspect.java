@@ -11,60 +11,42 @@ import polybot.Instruction;
 @Aspect(className = Instruction.class)
 @SuppressWarnings("all")
 public abstract class InstructionAspect extends NamedElementAspect {
-  public static void launch(final Instruction _self) {
-    final Polybot.polybot.aspects.InstructionAspectInstructionAspectProperties _self_ = Polybot.polybot.aspects.InstructionAspectInstructionAspectContext.getSelf(_self);
-    // #DispatchPointCut_before# void launch()
-    if (_self instanceof polybot.Instruction){
-    	Polybot.polybot.aspects.InstructionAspect._privk3_launch(_self_, (polybot.Instruction)_self);
-    };
-  }
-  
   @Step
   @ReplaceAspectMethod
   @Abstract
-  public static void exec(final Instruction _self, final int speed, final int duration) {
+  public static void exec(final Instruction _self) {
     final Polybot.polybot.aspects.InstructionAspectInstructionAspectProperties _self_ = Polybot.polybot.aspects.InstructionAspectInstructionAspectContext.getSelf(_self);
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.MoveAspect
+    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObjectDetectedAspect
+    		if (_self instanceof polybot.IfObjectDetected){
+    			Polybot.polybot.aspects.IfObjectDetectedAspect.exec((polybot.IfObjectDetected)_self);
+    		} else
+    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObjectDetectedAspect
+    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
     		if (_self instanceof polybot.Move){
-    			Polybot.polybot.aspects.MoveAspect.exec((polybot.Move)_self,speed,duration);
+    			Polybot.polybot.aspects.MoveAspect.exec((polybot.Move)_self);
     		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.MoveAspect
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.GoToAspect
-    		if (_self instanceof polybot.GoTo){
-    			Polybot.polybot.aspects.GoToAspect.exec((polybot.GoTo)_self,speed,duration);
+    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
+    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObstacleDetectedAspect
+    		if (_self instanceof polybot.IfObstacleDetected){
+    			Polybot.polybot.aspects.IfObstacleDetectedAspect.exec((polybot.IfObstacleDetected)_self);
     		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.GoToAspect
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.ForwardAspect
-    		if (_self instanceof polybot.Forward){
-    			Polybot.polybot.aspects.ForwardAspect.exec((polybot.Forward)_self,speed,duration);
+    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.IfObstacleDetectedAspect
+    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.TakeDropObjectAspect
+    		if (_self instanceof polybot.TakeDropObject){
+    			Polybot.polybot.aspects.TakeDropObjectAspect.exec((polybot.TakeDropObject)_self);
     		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.ForwardAspect
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.ReverseAspect
-    		if (_self instanceof polybot.Reverse){
-    			Polybot.polybot.aspects.ReverseAspect.exec((polybot.Reverse)_self,speed,duration);
-    		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.ReverseAspect
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.LeftAspect
-    		if (_self instanceof polybot.Left){
-    			Polybot.polybot.aspects.LeftAspect.exec((polybot.Left)_self,speed,duration);
-    		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.LeftAspect
-    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.RightAspect
-    		if (_self instanceof polybot.Right){
-    			Polybot.polybot.aspects.RightAspect.exec((polybot.Right)_self,speed,duration);
-    		} else
-    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec(int,int) from Polybot.polybot.aspects.RightAspect
-    // #DispatchPointCut_before# void exec(int,int)
+    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.TakeDropObjectAspect
+    // #DispatchPointCut_before# void exec()
     if (_self instanceof polybot.Instruction){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
     		@Override
     		public void execute() {
-    			Polybot.polybot.aspects.InstructionAspect._privk3_exec(_self_, (polybot.Instruction)_self,speed,duration);
+    			Polybot.polybot.aspects.InstructionAspect._privk3_exec(_self_, (polybot.Instruction)_self);
     		}
     	};
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     	if (stepManager != null) {
-    		stepManager.executeStep(_self, new Object[] {speed,duration}, command, "Instruction", "exec");
+    		stepManager.executeStep(_self, new Object[] {_self}, command, "Instruction", "exec");
     	} else {
     		command.execute();
     	}
@@ -72,11 +54,7 @@ public abstract class InstructionAspect extends NamedElementAspect {
     };
   }
   
-  protected static void _privk3_launch(final InstructionAspectInstructionAspectProperties _self_, final Instruction _self) {
-    InstructionAspect.exec(_self, _self.getSpeed(), _self.getDuration());
-  }
-  
-  protected static void _privk3_exec(final InstructionAspectInstructionAspectProperties _self_, final Instruction _self, final int speed, final int duration) {
+  protected static void _privk3_exec(final InstructionAspectInstructionAspectProperties _self_, final Instruction _self) {
     throw new java.lang.RuntimeException("Not implemented");
   }
 }

@@ -14,6 +14,8 @@ Bot returns Bot:
 
 
 Instruction returns Instruction:
+	Move | TakeDropObject | IfObstacleDetected | IfObjectDetected;
+Move returns Move:
 	GoTo | Right | Left | Reverse | Forward;
 
 Point returns Point:
@@ -67,5 +69,23 @@ Forward returns Forward:
 	'Forward'
 	'('
 		speed=EInt ';'
-		duration=EInt
+		duration=EInt 
 	')';
+	
+IfObjectDetected returns IfObjectDetected:
+	{IfObjectDetected}
+	'IfObjectDetected'
+	'{' 
+		(listOfInstructions+=Instruction ( "," listOfInstructions+=Instruction)* )
+	'}';
+
+IfObstacleDetected  returns IfObstacleDetected:
+	{IfObstacleDetected}
+	'IfObstacleDetected'
+	'{' 
+		( listOfInstructions+=Instruction ( "," listOfInstructions+=Instruction)* )
+	'}';
+TakeDropObject  returns TakeDropObject:
+	{TakeDropObject}
+	'TakeDropObject';
+	

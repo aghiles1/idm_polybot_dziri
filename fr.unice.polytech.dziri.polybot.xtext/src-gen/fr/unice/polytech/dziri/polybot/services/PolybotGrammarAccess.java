@@ -114,13 +114,36 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dziri.polybot.Polybot.Instruction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMoveParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIfObstacleDetectedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIfObjectDetectedParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Instruction:
+		//	Move | IfObstacleDetected | IfObjectDetected;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Move | IfObstacleDetected | IfObjectDetected
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Move
+		public RuleCall getMoveParserRuleCall_0() { return cMoveParserRuleCall_0; }
+		
+		//IfObstacleDetected
+		public RuleCall getIfObstacleDetectedParserRuleCall_1() { return cIfObstacleDetectedParserRuleCall_1; }
+		
+		//IfObjectDetected
+		public RuleCall getIfObjectDetectedParserRuleCall_2() { return cIfObjectDetectedParserRuleCall_2; }
+	}
+	public class MoveElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dziri.polybot.Polybot.Move");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cGoToParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cRightParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cLeftParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cReverseParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cForwardParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//Instruction:
+		//Move:
 		//	GoTo | Right | Left | Reverse | Forward;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -492,10 +515,128 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
+	public class IfObjectDetectedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dziri.polybot.Polybot.IfObjectDetected");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIfObjectDetectedAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIfObjectDetectedKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cListOfInstructionsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cListOfInstructionsInstructionParserRuleCall_3_0_0 = (RuleCall)cListOfInstructionsAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cListOfInstructionsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cListOfInstructionsInstructionParserRuleCall_3_1_1_0 = (RuleCall)cListOfInstructionsAssignment_3_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//IfObjectDetected:
+		//	{IfObjectDetected}
+		//	'IfObjectDetected'
+		//	'{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*)
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IfObjectDetected} 'IfObjectDetected' '{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*) '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{IfObjectDetected}
+		public Action getIfObjectDetectedAction_0() { return cIfObjectDetectedAction_0; }
+		
+		//'IfObjectDetected'
+		public Keyword getIfObjectDetectedKeyword_1() { return cIfObjectDetectedKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//listOfInstructions+=Instruction
+		public Assignment getListOfInstructionsAssignment_3_0() { return cListOfInstructionsAssignment_3_0; }
+		
+		//Instruction
+		public RuleCall getListOfInstructionsInstructionParserRuleCall_3_0_0() { return cListOfInstructionsInstructionParserRuleCall_3_0_0; }
+		
+		//("," listOfInstructions+=Instruction)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//","
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		
+		//listOfInstructions+=Instruction
+		public Assignment getListOfInstructionsAssignment_3_1_1() { return cListOfInstructionsAssignment_3_1_1; }
+		
+		//Instruction
+		public RuleCall getListOfInstructionsInstructionParserRuleCall_3_1_1_0() { return cListOfInstructionsInstructionParserRuleCall_3_1_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class IfObstacleDetectedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dziri.polybot.Polybot.IfObstacleDetected");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIfObstacleDetectedAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIfObstacleDetectedKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cListOfInstructionsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cListOfInstructionsInstructionParserRuleCall_3_0_0 = (RuleCall)cListOfInstructionsAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cListOfInstructionsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cListOfInstructionsInstructionParserRuleCall_3_1_1_0 = (RuleCall)cListOfInstructionsAssignment_3_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//IfObstacleDetected:
+		//	{IfObstacleDetected}
+		//	'IfObstacleDetected'
+		//	'{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*)
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IfObstacleDetected} 'IfObstacleDetected' '{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*)
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{IfObstacleDetected}
+		public Action getIfObstacleDetectedAction_0() { return cIfObstacleDetectedAction_0; }
+		
+		//'IfObstacleDetected'
+		public Keyword getIfObstacleDetectedKeyword_1() { return cIfObstacleDetectedKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//listOfInstructions+=Instruction
+		public Assignment getListOfInstructionsAssignment_3_0() { return cListOfInstructionsAssignment_3_0; }
+		
+		//Instruction
+		public RuleCall getListOfInstructionsInstructionParserRuleCall_3_0_0() { return cListOfInstructionsInstructionParserRuleCall_3_0_0; }
+		
+		//("," listOfInstructions+=Instruction)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//","
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		
+		//listOfInstructions+=Instruction
+		public Assignment getListOfInstructionsAssignment_3_1_1() { return cListOfInstructionsAssignment_3_1_1; }
+		
+		//Instruction
+		public RuleCall getListOfInstructionsInstructionParserRuleCall_3_1_1_0() { return cListOfInstructionsInstructionParserRuleCall_3_1_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
 	
 	
 	private final BotElements pBot;
 	private final InstructionElements pInstruction;
+	private final MoveElements pMove;
 	private final PointElements pPoint;
 	private final EIntElements pEInt;
 	private final EStringElements pEString;
@@ -504,6 +645,8 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 	private final LeftElements pLeft;
 	private final ReverseElements pReverse;
 	private final ForwardElements pForward;
+	private final IfObjectDetectedElements pIfObjectDetected;
+	private final IfObstacleDetectedElements pIfObstacleDetected;
 	
 	private final Grammar grammar;
 	
@@ -516,6 +659,7 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pBot = new BotElements();
 		this.pInstruction = new InstructionElements();
+		this.pMove = new MoveElements();
 		this.pPoint = new PointElements();
 		this.pEInt = new EIntElements();
 		this.pEString = new EStringElements();
@@ -524,6 +668,8 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLeft = new LeftElements();
 		this.pReverse = new ReverseElements();
 		this.pForward = new ForwardElements();
+		this.pIfObjectDetected = new IfObjectDetectedElements();
+		this.pIfObstacleDetected = new IfObstacleDetectedElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -568,13 +714,23 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Instruction:
-	//	GoTo | Right | Left | Reverse | Forward;
+	//	Move | IfObstacleDetected | IfObjectDetected;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
 	
 	public ParserRule getInstructionRule() {
 		return getInstructionAccess().getRule();
+	}
+	
+	//Move:
+	//	GoTo | Right | Left | Reverse | Forward;
+	public MoveElements getMoveAccess() {
+		return pMove;
+	}
+	
+	public ParserRule getMoveRule() {
+		return getMoveAccess().getRule();
 	}
 	
 	//Point:
@@ -685,6 +841,32 @@ public class PolybotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getForwardRule() {
 		return getForwardAccess().getRule();
+	}
+	
+	//IfObjectDetected:
+	//	{IfObjectDetected}
+	//	'IfObjectDetected'
+	//	'{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*)
+	//	'}';
+	public IfObjectDetectedElements getIfObjectDetectedAccess() {
+		return pIfObjectDetected;
+	}
+	
+	public ParserRule getIfObjectDetectedRule() {
+		return getIfObjectDetectedAccess().getRule();
+	}
+	
+	//IfObstacleDetected:
+	//	{IfObstacleDetected}
+	//	'IfObstacleDetected'
+	//	'{' (listOfInstructions+=Instruction ("," listOfInstructions+=Instruction)*)
+	//	'}';
+	public IfObstacleDetectedElements getIfObstacleDetectedAccess() {
+		return pIfObstacleDetected;
+	}
+	
+	public ParserRule getIfObstacleDetectedRule() {
+		return getIfObstacleDetectedAccess().getRule();
 	}
 	
 	//terminal ID:

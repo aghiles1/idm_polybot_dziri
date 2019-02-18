@@ -159,31 +159,13 @@ public interface PolybotPackage extends EPackage {
 	int INSTRUCTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Speed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION__SPEED = 0;
-
-	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION__DURATION = 1;
-
-	/**
 	 * The number of structural features of the '<em>Instruction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_FEATURE_COUNT = 2;
+	int INSTRUCTION_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Instruction</em>' class.
@@ -212,7 +194,7 @@ public interface PolybotPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MOVE__SPEED = INSTRUCTION__SPEED;
+	int MOVE__SPEED = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -221,7 +203,7 @@ public interface PolybotPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MOVE__DURATION = INSTRUCTION__DURATION;
+	int MOVE__DURATION = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Move</em>' class.
@@ -230,7 +212,7 @@ public interface PolybotPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MOVE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+	int MOVE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Move</em>' class.
@@ -474,6 +456,110 @@ public interface PolybotPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link polybot.impl.IfObjectDetectedImpl <em>If Object Detected</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.IfObjectDetectedImpl
+	 * @see polybot.impl.PolybotPackageImpl#getIfObjectDetected()
+	 * @generated
+	 */
+	int IF_OBJECT_DETECTED = 9;
+
+	/**
+	 * The feature id for the '<em><b>List Of Instructions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED__LIST_OF_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>If Object Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>If Object Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBJECT_DETECTED_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.IfObstacleDetectedImpl <em>If Obstacle Detected</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.IfObstacleDetectedImpl
+	 * @see polybot.impl.PolybotPackageImpl#getIfObstacleDetected()
+	 * @generated
+	 */
+	int IF_OBSTACLE_DETECTED = 10;
+
+	/**
+	 * The feature id for the '<em><b>List Of Instructions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>If Obstacle Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>If Obstacle Detected</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OBSTACLE_DETECTED_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link polybot.impl.TakeDropObjectImpl <em>Take Drop Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.TakeDropObjectImpl
+	 * @see polybot.impl.PolybotPackageImpl#getTakeDropObject()
+	 * @generated
+	 */
+	int TAKE_DROP_OBJECT = 11;
+
+	/**
+	 * The number of structural features of the '<em>Take Drop Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAKE_DROP_OBJECT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Take Drop Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAKE_DROP_OBJECT_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link polybot.Bot <em>Bot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -548,28 +634,6 @@ public interface PolybotPackage extends EPackage {
 	EClass getInstruction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link polybot.Instruction#getSpeed <em>Speed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Speed</em>'.
-	 * @see polybot.Instruction#getSpeed()
-	 * @see #getInstruction()
-	 * @generated
-	 */
-	EAttribute getInstruction_Speed();
-
-	/**
-	 * Returns the meta object for the attribute '{@link polybot.Instruction#getDuration <em>Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see polybot.Instruction#getDuration()
-	 * @see #getInstruction()
-	 * @generated
-	 */
-	EAttribute getInstruction_Duration();
-
-	/**
 	 * Returns the meta object for class '{@link polybot.GoTo <em>Go To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -588,6 +652,28 @@ public interface PolybotPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMove();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.Move#getSpeed <em>Speed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Speed</em>'.
+	 * @see polybot.Move#getSpeed()
+	 * @see #getMove()
+	 * @generated
+	 */
+	EAttribute getMove_Speed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.Move#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see polybot.Move#getDuration()
+	 * @see #getMove()
+	 * @generated
+	 */
+	EAttribute getMove_Duration();
 
 	/**
 	 * Returns the meta object for class '{@link polybot.Right <em>Right</em>}'.
@@ -628,6 +714,58 @@ public interface PolybotPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getForward();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.IfObjectDetected <em>If Object Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Object Detected</em>'.
+	 * @see polybot.IfObjectDetected
+	 * @generated
+	 */
+	EClass getIfObjectDetected();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link polybot.IfObjectDetected#getListOfInstructions <em>List Of Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>List Of Instructions</em>'.
+	 * @see polybot.IfObjectDetected#getListOfInstructions()
+	 * @see #getIfObjectDetected()
+	 * @generated
+	 */
+	EReference getIfObjectDetected_ListOfInstructions();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.IfObstacleDetected <em>If Obstacle Detected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Obstacle Detected</em>'.
+	 * @see polybot.IfObstacleDetected
+	 * @generated
+	 */
+	EClass getIfObstacleDetected();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link polybot.IfObstacleDetected#getListOfInstructions <em>List Of Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>List Of Instructions</em>'.
+	 * @see polybot.IfObstacleDetected#getListOfInstructions()
+	 * @see #getIfObstacleDetected()
+	 * @generated
+	 */
+	EReference getIfObstacleDetected_ListOfInstructions();
+
+	/**
+	 * Returns the meta object for class '{@link polybot.TakeDropObject <em>Take Drop Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Take Drop Object</em>'.
+	 * @see polybot.TakeDropObject
+	 * @generated
+	 */
+	EClass getTakeDropObject();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -715,22 +853,6 @@ public interface PolybotPackage extends EPackage {
 		EClass INSTRUCTION = eINSTANCE.getInstruction();
 
 		/**
-		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION__SPEED = eINSTANCE.getInstruction_Speed();
-
-		/**
-		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION__DURATION = eINSTANCE.getInstruction_Duration();
-
-		/**
 		 * The meta object literal for the '{@link polybot.impl.GoToImpl <em>Go To</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -749,6 +871,22 @@ public interface PolybotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MOVE = eINSTANCE.getMove();
+
+		/**
+		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MOVE__SPEED = eINSTANCE.getMove_Speed();
+
+		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MOVE__DURATION = eINSTANCE.getMove_Duration();
 
 		/**
 		 * The meta object literal for the '{@link polybot.impl.RightImpl <em>Right</em>}' class.
@@ -789,6 +927,52 @@ public interface PolybotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FORWARD = eINSTANCE.getForward();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.IfObjectDetectedImpl <em>If Object Detected</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.IfObjectDetectedImpl
+		 * @see polybot.impl.PolybotPackageImpl#getIfObjectDetected()
+		 * @generated
+		 */
+		EClass IF_OBJECT_DETECTED = eINSTANCE.getIfObjectDetected();
+
+		/**
+		 * The meta object literal for the '<em><b>List Of Instructions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_OBJECT_DETECTED__LIST_OF_INSTRUCTIONS = eINSTANCE.getIfObjectDetected_ListOfInstructions();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.IfObstacleDetectedImpl <em>If Obstacle Detected</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.IfObstacleDetectedImpl
+		 * @see polybot.impl.PolybotPackageImpl#getIfObstacleDetected()
+		 * @generated
+		 */
+		EClass IF_OBSTACLE_DETECTED = eINSTANCE.getIfObstacleDetected();
+
+		/**
+		 * The meta object literal for the '<em><b>List Of Instructions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS = eINSTANCE.getIfObstacleDetected_ListOfInstructions();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.TakeDropObjectImpl <em>Take Drop Object</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.TakeDropObjectImpl
+		 * @see polybot.impl.PolybotPackageImpl#getTakeDropObject()
+		 * @generated
+		 */
+		EClass TAKE_DROP_OBJECT = eINSTANCE.getTakeDropObject();
 
 	}
 

@@ -63,6 +63,9 @@ public class PolybotFactoryImpl extends EFactoryImpl implements PolybotFactory {
 			case PolybotPackage.LEFT: return createLeft();
 			case PolybotPackage.REVERSE: return createReverse();
 			case PolybotPackage.FORWARD: return createForward();
+			case PolybotPackage.IF_OBJECT_DETECTED: return createIfObjectDetected();
+			case PolybotPackage.IF_OBSTACLE_DETECTED: return createIfObstacleDetected();
+			case PolybotPackage.TAKE_DROP_OBJECT: return createTakeDropObject();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +139,36 @@ public class PolybotFactoryImpl extends EFactoryImpl implements PolybotFactory {
 	public Forward createForward() {
 		ForwardImpl forward = new ForwardImpl();
 		return forward;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IfObjectDetected createIfObjectDetected() {
+		IfObjectDetectedImpl ifObjectDetected = new IfObjectDetectedImpl();
+		return ifObjectDetected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IfObstacleDetected createIfObstacleDetected() {
+		IfObstacleDetectedImpl ifObstacleDetected = new IfObstacleDetectedImpl();
+		return ifObstacleDetected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TakeDropObject createTakeDropObject() {
+		TakeDropObjectImpl takeDropObject = new TakeDropObjectImpl();
+		return takeDropObject;
 	}
 
 	/**
