@@ -95,7 +95,7 @@ fr.inria.kairos.timesquare.grph.viewer,1.0.0.201810161528,file:/home/aghiles/Doc
 fr.inria.kairos.timesquare.statespace.view,1.0.0.201810161528,file:/home/aghiles/Documents/gmoc/plugins/fr.inria.kairos.timesquare.statespace.view_1.0.0.201810161528.jar,4,false
 fr.kairos.timesquare.safety.core,1.0.0.201810161528,file:/home/aghiles/Documents/gmoc/plugins/fr.kairos.timesquare.safety.core_1.0.0.201810161528.jar,4,false
 fr.kairos.timesquare.safety.core.ui,1.0.0.201810161528,file:/home/aghiles/Documents/gmoc/plugins/fr.kairos.timesquare.safety.core.ui_1.0.0.201810161528.jar,4,false
-fr.unice.polytech.deantoni.vrep.polybot,1.0.0.qualifier,file:/home/aghiles/Documents/gmoc/tuto1/PolyBot/fr.unice.polytech.deantoni.vrep.polybot/,4,false
+fr.unice.polytech.deantoni.vrep.polybot,1.0.0.qualifier,file:/home/aghiles/Documents/gmoc/tuto1/fr.unice.polytech.deantoni.vrep.polybot/,4,false
 fr.unice.polytech.dziri.polybot,0.1.0.qualifier,file:/home/aghiles/Documents/gmoc/tuto1/fr.unice.polytech.dziri.polybot/,4,false
 fr.unice.polytech.dziri.polybot.dsl,1.0.0,file:/home/aghiles/Documents/gmoc/tuto1/fr.unice.polytech.dziri.polybot.dsl/,4,false
 fr.unice.polytech.dziri.polybot.edit,1.0.0.qualifier,file:/home/aghiles/Documents/gmoc/tuto1/fr.unice.polytech.dziri.polybot.edit/,4,false
