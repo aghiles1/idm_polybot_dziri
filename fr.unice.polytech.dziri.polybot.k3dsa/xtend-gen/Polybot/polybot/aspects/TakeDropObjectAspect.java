@@ -1,5 +1,6 @@
 package Polybot.polybot.aspects;
 
+import Polybot.polybot.aspects.BotAspect;
 import Polybot.polybot.aspects.InstructionAspect;
 import Polybot.polybot.aspects.TakeDropObjectAspectTakeDropObjectAspectProperties;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
@@ -37,6 +38,23 @@ public class TakeDropObjectAspect extends InstructionAspect {
   }
   
   protected static void _privk3_exec(final TakeDropObjectAspectTakeDropObjectAspectProperties _self_, final TakeDropObject _self) {
-    InputOutput.<String>println("TakeDropObject");
+    InputOutput.<String>println("TakeDropObjectAspect");
+    BotAspect.rob.openGrip();
+    for (int i = 0; (i < 600); i = (i + 50)) {
+      BotAspect.rob.synchronousTrigger();
+    }
+    BotAspect.rob.goStraight(5);
+    while (((BotAspect.rob.getDetectedObjectDistance() > 6) && BotAspect.rob.bombDetected())) {
+      {
+        InputOutput.<Integer>println(Integer.valueOf(BotAspect.rob.getDetectedObjectDistance()));
+        BotAspect.rob.synchronousTrigger();
+      }
+    }
+    BotAspect.rob.goStraight(0);
+    InputOutput.<String>println("close");
+    BotAspect.rob.closeGrip();
+    for (int i = 0; (i < 600); i = (i + 50)) {
+      BotAspect.rob.synchronousTrigger();
+    }
   }
 }

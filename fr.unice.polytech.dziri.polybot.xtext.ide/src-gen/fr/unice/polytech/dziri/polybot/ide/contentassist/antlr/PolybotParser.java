@@ -51,6 +51,10 @@ public class PolybotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup(), "rule__IfObstacleDetected__Group__0");
 			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup_3(), "rule__IfObstacleDetected__Group_3__0");
 			builder.put(grammarAccess.getIfObstacleDetectedAccess().getGroup_3_1(), "rule__IfObstacleDetected__Group_3_1__0");
+			builder.put(grammarAccess.getTakeDropObjectAccess().getGroup(), "rule__TakeDropObject__Group__0");
+			builder.put(grammarAccess.getWhileAccess().getGroup(), "rule__While__Group__0");
+			builder.put(grammarAccess.getWhileAccess().getGroup_6(), "rule__While__Group_6__0");
+			builder.put(grammarAccess.getWhileAccess().getGroup_6_1(), "rule__While__Group_6_1__0");
 			builder.put(grammarAccess.getBotAccess().getInitialPositionAssignment_3_1(), "rule__Bot__InitialPositionAssignment_3_1");
 			builder.put(grammarAccess.getBotAccess().getInstructionListAssignment_4_2(), "rule__Bot__InstructionListAssignment_4_2");
 			builder.put(grammarAccess.getBotAccess().getInstructionListAssignment_4_3_1(), "rule__Bot__InstructionListAssignment_4_3_1");
@@ -70,6 +74,9 @@ public class PolybotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIfObjectDetectedAccess().getListOfInstructionsAssignment_3_1_1(), "rule__IfObjectDetected__ListOfInstructionsAssignment_3_1_1");
 			builder.put(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsAssignment_3_0(), "rule__IfObstacleDetected__ListOfInstructionsAssignment_3_0");
 			builder.put(grammarAccess.getIfObstacleDetectedAccess().getListOfInstructionsAssignment_3_1_1(), "rule__IfObstacleDetected__ListOfInstructionsAssignment_3_1_1");
+			builder.put(grammarAccess.getWhileAccess().getNbAssignment_3(), "rule__While__NbAssignment_3");
+			builder.put(grammarAccess.getWhileAccess().getListOfInstructionsAssignment_6_0(), "rule__While__ListOfInstructionsAssignment_6_0");
+			builder.put(grammarAccess.getWhileAccess().getListOfInstructionsAssignment_6_1_1(), "rule__While__ListOfInstructionsAssignment_6_1_1");
 		}
 	}
 	

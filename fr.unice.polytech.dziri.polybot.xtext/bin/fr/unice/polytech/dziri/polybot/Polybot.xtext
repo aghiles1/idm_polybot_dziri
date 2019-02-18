@@ -14,7 +14,7 @@ Bot returns Bot:
 
 
 Instruction returns Instruction:
-	Move | TakeDropObject | IfObstacleDetected | IfObjectDetected;
+	Move | TakeDropObject | While | IfObstacleDetected | IfObjectDetected;
 Move returns Move:
 	GoTo | Right | Left | Reverse | Forward;
 
@@ -88,4 +88,14 @@ IfObstacleDetected  returns IfObstacleDetected:
 TakeDropObject  returns TakeDropObject:
 	{TakeDropObject}
 	'TakeDropObject';
+	
+While  returns While:
+	{While}
+	'While'
+	'('
+		nb=EInt
+	')'
+	'{' 
+		( listOfInstructions+=Instruction ( "," listOfInstructions+=Instruction)* )
+	'}';
 	

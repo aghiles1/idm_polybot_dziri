@@ -25,6 +25,8 @@ import polybot.Point;
 import polybot.PolybotPackage;
 import polybot.Reverse;
 import polybot.Right;
+import polybot.TakeDropObject;
+import polybot.While;
 
 @SuppressWarnings("all")
 public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -66,6 +68,12 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case PolybotPackage.RIGHT:
 				sequence_Right(context, (Right) semanticObject); 
+				return; 
+			case PolybotPackage.TAKE_DROP_OBJECT:
+				sequence_TakeDropObject(context, (TakeDropObject) semanticObject); 
+				return; 
+			case PolybotPackage.WHILE:
+				sequence_While(context, (While) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -243,6 +251,32 @@ public class PolybotSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getRightAccess().getSpeedEIntParserRuleCall_3_0(), semanticObject.getSpeed());
 		feeder.accept(grammarAccess.getRightAccess().getDurationEIntParserRuleCall_5_0(), semanticObject.getDuration());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns TakeDropObject
+	 *     TakeDropObject returns TakeDropObject
+	 *
+	 * Constraint:
+	 *     {TakeDropObject}
+	 */
+	protected void sequence_TakeDropObject(ISerializationContext context, TakeDropObject semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns While
+	 *     While returns While
+	 *
+	 * Constraint:
+	 *     (nb=EInt listOfInstructions+=Instruction listOfInstructions+=Instruction*)
+	 */
+	protected void sequence_While(ISerializationContext context, While semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

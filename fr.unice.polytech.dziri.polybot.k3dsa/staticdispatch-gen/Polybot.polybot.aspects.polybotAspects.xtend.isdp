@@ -43,3 +43,8 @@
 			Polybot.polybot.aspects.TakeDropObjectAspect.exec((polybot.TakeDropObject)_self);
 		} else
 		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.TakeDropObjectAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.WhileAspect
+		if (_self instanceof polybot.While){
+			Polybot.polybot.aspects.WhileAspect.exec((polybot.While)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.WhileAspect

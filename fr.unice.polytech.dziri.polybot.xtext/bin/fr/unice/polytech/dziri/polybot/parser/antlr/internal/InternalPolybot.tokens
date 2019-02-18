@@ -12,6 +12,8 @@
 'Point'=17
 'Reverse'=25
 'Right'=23
+'TakeDropObject'=29
+'While'=30
 'init'=13
 'instructionList'=14
 '{'=12
@@ -41,3 +43,5 @@ T__25=25
 T__26=26
 T__27=27
 T__28=28
+T__29=29
+T__30=30

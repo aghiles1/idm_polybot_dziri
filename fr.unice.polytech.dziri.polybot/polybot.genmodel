@@ -30,5 +30,10 @@
     <genClasses ecoreClass="polybot.ecore#//IfObstacleDetected">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference polybot.ecore#//IfObstacleDetected/listOfInstructions"/>
     </genClasses>
+    <genClasses ecoreClass="polybot.ecore#//TakeDropObject"/>
+    <genClasses ecoreClass="polybot.ecore#//While">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polybot.ecore#//While/nb"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference polybot.ecore#//While/listOfInstructions"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

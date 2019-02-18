@@ -112,6 +112,15 @@ public interface PolybotFactory extends EFactory {
 	TakeDropObject createTakeDropObject();
 
 	/**
+	 * Returns a new object of class '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>While</em>'.
+	 * @generated
+	 */
+	While createWhile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

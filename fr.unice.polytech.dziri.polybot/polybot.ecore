@@ -30,4 +30,9 @@
         eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TakeDropObject" eSuperTypes="#//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listOfInstructions" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

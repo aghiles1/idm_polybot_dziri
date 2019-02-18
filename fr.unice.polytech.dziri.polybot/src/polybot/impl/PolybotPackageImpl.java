@@ -23,6 +23,7 @@ import polybot.PolybotPackage;
 import polybot.Reverse;
 import polybot.Right;
 import polybot.TakeDropObject;
+import polybot.While;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +115,13 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 * @generated
 	 */
 	private EClass takeDropObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass whileEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -361,6 +369,33 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getWhile() {
+		return whileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWhile_Nb() {
+		return (EAttribute)whileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWhile_ListOfInstructions() {
+		return (EReference)whileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PolybotFactory getPolybotFactory() {
 		return (PolybotFactory)getEFactoryInstance();
 	}
@@ -415,6 +450,10 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		createEReference(ifObstacleDetectedEClass, IF_OBSTACLE_DETECTED__LIST_OF_INSTRUCTIONS);
 
 		takeDropObjectEClass = createEClass(TAKE_DROP_OBJECT);
+
+		whileEClass = createEClass(WHILE);
+		createEAttribute(whileEClass, WHILE__NB);
+		createEReference(whileEClass, WHILE__LIST_OF_INSTRUCTIONS);
 	}
 
 	/**
@@ -454,6 +493,7 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		ifObjectDetectedEClass.getESuperTypes().add(this.getInstruction());
 		ifObstacleDetectedEClass.getESuperTypes().add(this.getInstruction());
 		takeDropObjectEClass.getESuperTypes().add(this.getInstruction());
+		whileEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(botEClass, Bot.class, "Bot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -487,6 +527,10 @@ public class PolybotPackageImpl extends EPackageImpl implements PolybotPackage {
 		initEReference(getIfObstacleDetected_ListOfInstructions(), this.getInstruction(), null, "listOfInstructions", null, 0, -1, IfObstacleDetected.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(takeDropObjectEClass, TakeDropObject.class, "TakeDropObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWhile_Nb(), ecorePackage.getEInt(), "nb", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhile_ListOfInstructions(), this.getInstruction(), null, "listOfInstructions", null, 0, -1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

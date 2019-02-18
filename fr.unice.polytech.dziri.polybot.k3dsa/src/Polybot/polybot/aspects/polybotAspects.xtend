@@ -23,6 +23,9 @@ import fr.unice.polytech.deantoni.vrep.polybot.PolyBrain
 import polybot.IfObjectDetected
 import polybot.TakeDropObject
 import polybot.IfObstacleDetected
+import fr.unice.polytech.deantoni.vrep.polybot.utils.Position2D
+import java.lang.Math
+import polybot.While
 
 @Aspect(className=Bot)
 class BotAspect {
@@ -145,7 +148,15 @@ class IfObjectDetectedAspect extends InstructionAspect {
 	@Step
 	@OverrideAspectMethod
 	def void exec() {
-			println("IfObjectDetected");		
+		println("IfObjectDetected");		
+		if(BotAspect.rob.bombDetected()) {
+			println("Obstacle Detected");				
+			for(instr : _self.listOfInstructions){
+            	instr.exec();
+        	}
+		}else {
+			println("Obstacle not Detected");		
+		}	
 	}
 }
 /**
@@ -156,7 +167,15 @@ class IfObstacleDetectedAspect extends InstructionAspect {
 	@Step
 	@OverrideAspectMethod
 	def void exec() {
-		println("IfObstacleDetected");		
+		println("IfObjectDetected");				
+		if(!BotAspect.rob.bombDetected()) {
+			println("Obstacle Detected");				
+			for(instr : _self.listOfInstructions){
+            	instr.exec();
+        	}
+		}else {
+			println("Obstacle not Detected");		
+		}
 	}
 }
 /** 
@@ -167,7 +186,42 @@ class TakeDropObjectAspect extends InstructionAspect {
 	@Step
 	@OverrideAspectMethod
 	def void exec() {
-		println("TakeDropObject");		
+		println("TakeDropObjectAspect");
+		BotAspect.rob.openGrip();
+		for(var i=0; i < 600 ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.goStraight(5);
+		while(BotAspect.rob.getDetectedObjectDistance() > 6 && BotAspect.rob.bombDetected()) {
+			println(BotAspect.rob.getDetectedObjectDistance());
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.goStraight(0);
+		println("close");
+		BotAspect.rob.closeGrip();
+		for(var i=0; i < 600 ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		
+	}
+}
+
+/** 
+ * nb fois les instructions
+ */
+@Aspect(className=While)
+class WhileAspect extends InstructionAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec() {
+		var int i =_self.nb;
+		while(i > 0){
+			for(instr : _self.listOfInstructions){
+            	instr.exec();
+        	}
+        	i = i - 1;
+		}
+		
 	}
 }
 

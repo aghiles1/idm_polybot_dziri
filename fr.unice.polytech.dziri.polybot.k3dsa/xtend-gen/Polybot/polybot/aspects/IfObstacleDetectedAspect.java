@@ -1,12 +1,15 @@
 package Polybot.polybot.aspects;
 
+import Polybot.polybot.aspects.BotAspect;
 import Polybot.polybot.aspects.IfObstacleDetectedAspectIfObstacleDetectedAspectProperties;
 import Polybot.polybot.aspects.InstructionAspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import polybot.IfObstacleDetected;
+import polybot.Instruction;
 
 /**
  * Si on detect un obstacle
@@ -37,6 +40,17 @@ public class IfObstacleDetectedAspect extends InstructionAspect {
   }
   
   protected static void _privk3_exec(final IfObstacleDetectedAspectIfObstacleDetectedAspectProperties _self_, final IfObstacleDetected _self) {
-    InputOutput.<String>println("IfObstacleDetected");
+    InputOutput.<String>println("IfObjectDetected");
+    boolean _bombDetected = BotAspect.rob.bombDetected();
+    boolean _not = (!_bombDetected);
+    if (_not) {
+      InputOutput.<String>println("Obstacle Detected");
+      EList<Instruction> _listOfInstructions = _self.getListOfInstructions();
+      for (final Instruction instr : _listOfInstructions) {
+        InstructionAspect.exec(instr);
+      }
+    } else {
+      InputOutput.<String>println("Obstacle not Detected");
+    }
   }
 }

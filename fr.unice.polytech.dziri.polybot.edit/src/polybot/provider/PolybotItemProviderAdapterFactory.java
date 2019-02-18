@@ -302,6 +302,29 @@ public class PolybotItemProviderAdapterFactory extends PolybotAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link polybot.While} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileItemProvider whileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link polybot.While}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWhileAdapter() {
+		if (whileItemProvider == null) {
+			whileItemProvider = new WhileItemProvider(this);
+		}
+
+		return whileItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +433,7 @@ public class PolybotItemProviderAdapterFactory extends PolybotAdapterFactory imp
 		if (ifObjectDetectedItemProvider != null) ifObjectDetectedItemProvider.dispose();
 		if (ifObstacleDetectedItemProvider != null) ifObstacleDetectedItemProvider.dispose();
 		if (takeDropObjectItemProvider != null) takeDropObjectItemProvider.dispose();
+		if (whileItemProvider != null) whileItemProvider.dispose();
 	}
 
 }

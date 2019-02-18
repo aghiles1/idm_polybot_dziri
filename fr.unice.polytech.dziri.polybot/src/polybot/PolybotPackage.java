@@ -560,6 +560,53 @@ public interface PolybotPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link polybot.impl.WhileImpl <em>While</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see polybot.impl.WhileImpl
+	 * @see polybot.impl.PolybotPackageImpl#getWhile()
+	 * @generated
+	 */
+	int WHILE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Nb</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__NB = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>List Of Instructions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__LIST_OF_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link polybot.Bot <em>Bot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -768,6 +815,38 @@ public interface PolybotPackage extends EPackage {
 	EClass getTakeDropObject();
 
 	/**
+	 * Returns the meta object for class '{@link polybot.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>While</em>'.
+	 * @see polybot.While
+	 * @generated
+	 */
+	EClass getWhile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link polybot.While#getNb <em>Nb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb</em>'.
+	 * @see polybot.While#getNb()
+	 * @see #getWhile()
+	 * @generated
+	 */
+	EAttribute getWhile_Nb();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link polybot.While#getListOfInstructions <em>List Of Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>List Of Instructions</em>'.
+	 * @see polybot.While#getListOfInstructions()
+	 * @see #getWhile()
+	 * @generated
+	 */
+	EReference getWhile_ListOfInstructions();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -973,6 +1052,32 @@ public interface PolybotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TAKE_DROP_OBJECT = eINSTANCE.getTakeDropObject();
+
+		/**
+		 * The meta object literal for the '{@link polybot.impl.WhileImpl <em>While</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see polybot.impl.WhileImpl
+		 * @see polybot.impl.PolybotPackageImpl#getWhile()
+		 * @generated
+		 */
+		EClass WHILE = eINSTANCE.getWhile();
+
+		/**
+		 * The meta object literal for the '<em><b>Nb</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WHILE__NB = eINSTANCE.getWhile_Nb();
+
+		/**
+		 * The meta object literal for the '<em><b>List Of Instructions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WHILE__LIST_OF_INSTRUCTIONS = eINSTANCE.getWhile_ListOfInstructions();
 
 	}
 

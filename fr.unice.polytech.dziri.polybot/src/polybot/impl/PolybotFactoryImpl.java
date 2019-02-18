@@ -66,6 +66,7 @@ public class PolybotFactoryImpl extends EFactoryImpl implements PolybotFactory {
 			case PolybotPackage.IF_OBJECT_DETECTED: return createIfObjectDetected();
 			case PolybotPackage.IF_OBSTACLE_DETECTED: return createIfObstacleDetected();
 			case PolybotPackage.TAKE_DROP_OBJECT: return createTakeDropObject();
+			case PolybotPackage.WHILE: return createWhile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,6 +170,16 @@ public class PolybotFactoryImpl extends EFactoryImpl implements PolybotFactory {
 	public TakeDropObject createTakeDropObject() {
 		TakeDropObjectImpl takeDropObject = new TakeDropObjectImpl();
 		return takeDropObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public While createWhile() {
+		WhileImpl while_ = new WhileImpl();
+		return while_;
 	}
 
 	/**

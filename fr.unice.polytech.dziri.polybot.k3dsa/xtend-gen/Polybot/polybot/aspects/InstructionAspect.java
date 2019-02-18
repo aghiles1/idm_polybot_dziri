@@ -36,6 +36,11 @@ public abstract class InstructionAspect extends NamedElementAspect {
     			Polybot.polybot.aspects.TakeDropObjectAspect.exec((polybot.TakeDropObject)_self);
     		} else
     		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.TakeDropObjectAspect
+    	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.WhileAspect
+    		if (_self instanceof polybot.While){
+    			Polybot.polybot.aspects.WhileAspect.exec((polybot.While)_self);
+    		} else
+    		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.WhileAspect
     // #DispatchPointCut_before# void exec()
     if (_self instanceof polybot.Instruction){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {

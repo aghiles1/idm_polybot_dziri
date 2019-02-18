@@ -1,0 +1,162 @@
+/**
+ */
+package polybot.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import polybot.PolybotPackage;
+import polybot.While;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>While</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link polybot.impl.WhileImpl#getNb <em>Nb</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class WhileImpl extends InstructionImpl implements While {
+	/**
+	 * The default value of the '{@link #getNb() <em>Nb</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNb()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNb() <em>Nb</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNb()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nb = NB_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PolybotPackage.Literals.WHILE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getNb() {
+		return nb;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNb(int newNb) {
+		int oldNb = nb;
+		nb = newNb;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolybotPackage.WHILE__NB, oldNb, nb));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case PolybotPackage.WHILE__NB:
+				return getNb();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case PolybotPackage.WHILE__NB:
+				setNb((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case PolybotPackage.WHILE__NB:
+				setNb(NB_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case PolybotPackage.WHILE__NB:
+				return nb != NB_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (nb: ");
+		result.append(nb);
+		result.append(')');
+		return result.toString();
+	}
+
+} //WhileImpl
