@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.unice.polytech.dziri.polybot.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.unice.polytech.dziri.polybot.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.unice.polytech.dziri.polybot.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.unice.polytech.dziri.polybot,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.unice.polytech.dziri.polybot.formatting2,
+ fr.unice.polytech.dziri.polybot,
+ fr.unice.polytech.dziri.polybot.parser.antlr,
+ fr.unice.polytech.dziri.polybot.parser.antlr.internal,
+ fr.unice.polytech.dziri.polybot.generator,
+ fr.unice.polytech.dziri.polybot.scoping,
+ fr.unice.polytech.dziri.polybot.validation,
+ fr.unice.polytech.dziri.polybot.services,
+ fr.unice.polytech.dziri.polybot.serializer
+Import-Package: org.apache.log4j

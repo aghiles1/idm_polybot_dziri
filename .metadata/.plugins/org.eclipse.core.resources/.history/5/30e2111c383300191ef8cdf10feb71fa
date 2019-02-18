@@ -1,0 +1,137 @@
+package Polybot.polybot.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import polybot.Bot
+import polybot.Point
+import polybot.Instruction
+import polybot.NamedElement
+import polybot.GoTo
+import polybot.Move
+import polybot.Right
+import polybot.Left
+import polybot.Reverse
+import polybot.Forward
+
+import static extension Polybot.polybot.aspects.InstructionAspect.*
+
+import fr.inria.diverse.k3.al.annotationprocessor.Main
+import fr.inria.diverse.k3.al.annotationprocessor.Step
+import fr.inria.diverse.k3.al.annotationprocessor.ReplaceAspectMethod
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+import fr.unice.polytech.deantoni.vrep.polybot.robot.PolyRob
+import fr.unice.polytech.deantoni.vrep.polybot.PolyBrain
+
+@Aspect(className=Bot)
+class BotAspect {
+	
+	public static var PolyBrain rob;
+	 
+	@Main
+	def void execute(){
+		BotAspect.rob = new PolyBrain("127.0.0.1", 19997);
+		BotAspect.rob.start();
+		BotAspect.rob.synchronous();
+        for(instr : _self.instructionList){
+            instr.launch();
+        }
+    }
+}
+ 
+@Aspect(className=Point)
+class PointAspect {
+
+}
+ 
+@Aspect(className=Instruction)
+abstract class InstructionAspect extends NamedElementAspect {
+	
+	def void launch() {
+		_self.exec(_self.speed, _self.duration);
+	}
+	@Step
+	@ReplaceAspectMethod
+	def void exec(int speed, int duration);
+}
+
+@Aspect(className=NamedElement)
+abstract class NamedElementAspect {
+
+}
+
+
+
+@Aspect(className=Move)
+abstract class MoveAspect extends InstructionAspect {
+	@Step
+	@ReplaceAspectMethod
+	def void exec(int speed, int duration);
+}
+
+@Aspect(className=GoTo)
+class GoToAspect extends MoveAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec(int speed, int duration) {
+				
+		
+	}
+}
+
+@Aspect(className=Right)
+class RightAspect extends MoveAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec(int speed, int duration) {
+		println("Right");	
+		BotAspect.rob.turnRight(speed);			
+		for(var i=0; i < duration ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.turnRight(0);	
+	}
+}
+
+@Aspect(className=Left)
+class LeftAspect extends MoveAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec(int speed, int duration) {
+		println("left");
+		BotAspect.rob.turnLeft(speed);
+		for(var i=0; i < duration ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.turnLeft(0);
+	}
+}
+
+@Aspect(className=Reverse)
+class ReverseAspect extends MoveAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec(int speed, int duration) {
+		println("Reverse");	
+		BotAspect.rob.goStraight(-speed);
+		for(var i=0; i < duration ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.goStraight(0);
+	}
+}
+
+
+@Aspect(className=Forward)
+class ForwardAspect extends MoveAspect {
+	@Step
+	@OverrideAspectMethod
+	def void exec(int speed, int duration) {
+		println("Forward");	
+		BotAspect.rob.goStraight(speed);
+		for(var i=0; i < duration ; i = i + 50) {
+			BotAspect.rob.synchronousTrigger();
+		}
+		BotAspect.rob.goStraight(0);
+	}
+}
+
+

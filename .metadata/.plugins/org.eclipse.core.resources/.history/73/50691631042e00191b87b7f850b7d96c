@@ -1,0 +1,15 @@
+	// BeginInjectInto Polybot.polybot.aspects.MoveAspect#void exec() from Polybot.polybot.aspects.RightAspect
+		if (_self instanceof polybot.Right){
+			Polybot.polybot.aspects.RightAspect.exec((polybot.Right)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.MoveAspect#void exec() from Polybot.polybot.aspects.RightAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
+		if (_self instanceof polybot.Move){
+			Polybot.polybot.aspects.MoveAspect.exec((polybot.Move)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.MoveAspect
+	// BeginInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.RightAspect
+		if (_self instanceof polybot.Right){
+			Polybot.polybot.aspects.RightAspect.exec((polybot.Right)_self);
+		} else
+		// EndInjectInto Polybot.polybot.aspects.InstructionAspect#void exec() from Polybot.polybot.aspects.RightAspect

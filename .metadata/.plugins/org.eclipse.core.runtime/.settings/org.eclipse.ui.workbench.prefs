@@ -1,0 +1,6 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.debug.ui.presentation\tTorg.eclipse.emf.compare.themeCategory\tTorg.eclipse.egit.ui.GitTheme\tTorg.eclipse.jdt.ui.presentation\tTorg.eclipse.wst.sse.ui\tTorg.eclipse.pde.genericeditor.target.extension.presentation\tTorg.eclipse.compare.contentmergeviewer.TextMergeViewer\tTorg.eclipse.ui.presentation.default\tTorg.eclipse.xtend.ui.presentation
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.ui.workbench.texteditor.blockSelectionModeFont
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.ui.workbench.texteditor.blockSelectionModeFont=1|Ubuntu|11.0|0|GTK|1|;

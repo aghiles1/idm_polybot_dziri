@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.unice.polytech.dziri.polybot.k3dsa
+Bundle-SymbolicName: fr.unice.polytech.dziri.polybot.k3dsa; singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0";visibility:="reexport"
+Bundle-ClassPath: .
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

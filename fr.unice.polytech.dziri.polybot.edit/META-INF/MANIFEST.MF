@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: fr.unice.polytech.dziri.polybot.edit;singleton:=true
+Automatic-Module-Name: fr.unice.polytech.dziri.polybot.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: polybot.provider.PolybotEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: polybot.provider
+Require-Bundle: org.eclipse.core.runtime,
+ fr.unice.polytech.dziri.polybot;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
