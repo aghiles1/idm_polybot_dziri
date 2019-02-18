@@ -92,7 +92,7 @@ Bot {
 ### Critiques :
 
 ###### inconvénients :
- * Ce langage permet de faire beaucoup de choses. Mais un problème majeur se pose. Si on veut faire un programme complexe, Le programmeur devrais fait tous le travail avec des instructions basiques.
+ * Ce langage permets de faire beaucoup de choses. Mais un problème majeur se pose. Si on veut faire un programme complexe, Le programmeur devrait faire tous le travail avec des instructions basiques.
  * Ne permet pas la visualisation des logs.
 
 ###### Avantages :
